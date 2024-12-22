@@ -9,7 +9,7 @@ LOGO_PATH = "Campaign-Visualizer_Logo.png"
 def main():
 
   st.set_page_config(layout="wide")
-  st.subheader(" ")
+
   col1,col2 = st.columns(2)
   with col1:
       st.title("Campaign Visualizer Tool")
