@@ -125,9 +125,6 @@ def main():
             fig = plot_election_results(election_results)
             st.pyplot(fig)
 
-            st.divider()
-            st.image(BANNER_PATH,width=300)
-            st.write(url)
 
 if __name__ == "__main__":
     main()
