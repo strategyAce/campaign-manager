@@ -113,7 +113,7 @@ def main():
                 npa_voters_weight * newdf["PCT NPA"] +
                 dem_turnout_weight * newdf["DEM TURNOUT"] + 
                 rep_turnout_weight * newdf["REP TURNOUT"] + 
-                npa_turnout_weight * newdf["NPA TURNOUT"] +
+                npa_turnout_weight * newdf["NPA TURNOUT"]
             )
             
             # Sort by score in descending order
