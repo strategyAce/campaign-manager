@@ -131,9 +131,18 @@ def voter_engagement_report(df):
     #st.button("Print Report", key=print, type="primary")
     st.markdown(
     """
-    <button onclick="window.print()" style="padding: 10px; font-size: 16px; background-color: #007BFF; color: white; border-radius: 5px; border: none; cursor: pointer;">
-        Print this page
-    </button>
+    <style>
+    .print-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    </style>
+    <button class="print-button" onclick="window.print()">Print this page</button>
     """,
     unsafe_allow_html=True
     )
