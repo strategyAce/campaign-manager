@@ -117,8 +117,6 @@ def main():
   st.divider()
   st.image(BANNER_PATH,width=300)
   st.write(url)
-      
-
 
 if __name__ == "__main__":
     main()
