@@ -33,10 +33,10 @@ def main():
     # Display the logo on the main page
     col1,col2 = st.columns(2)
     with col1:
-       st.title("Prioritizer Tool")
+       st.title("Precinct Analysis Tool")
     with col2:
        st.image("Campaign-Prioritizer_Logo.png",width=150)
-    st.subheader("Create a precinct list optimized for your campaign's strategy.")    
+    st.subheader("View key precinct data and create a priority list optimized for your campaign's strategy.")    
     st.write("This is a product of Strategy Ace LLC")
     st.write("version: BETAv0.1")
     st.divider()
