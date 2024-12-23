@@ -277,7 +277,11 @@ def election_runup_report(df):
 
 # Main application
 def main():
-    st.title("Campaign Reporter Tool")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.title("Campaign Reporter Tool")
+    with col2:
+        st.image("Campaign-Reporter_Logo.png",width=200)
     st.subheader("Create a precinct list optimized for your campaign's strategy.")
     st.write("This is a product of Strategy Ace LLC")
     st.write("version: BETAv0.1")
