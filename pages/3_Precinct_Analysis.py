@@ -50,8 +50,8 @@ def main():
     # Inputs for weights
     total_registered_weight = st.slider("Weight for Total Registered Voters", min_value=0.0, max_value=1.0, step=0.05)
     dem_voter_weight = st.slider("Weight for Total Democrat Voters", min_value=0.0, max_value=1.0, step=0.05)
-    rep_voters_weight = st.slider("Weight for Total Republican Voters", min_value=0.0, max_value=1.0, step=0.05)
-    npa_voters_weight = st.slider("Weight for Total NPA/Other Voters", min_value=0.0, max_value=1.0, step=0.05)
+    rep_voter_weight = st.slider("Weight for Total Republican Voters", min_value=0.0, max_value=1.0, step=0.05)
+    npa_voter_weight = st.slider("Weight for Total NPA/Other Voters", min_value=0.0, max_value=1.0, step=0.05)
     dem_turnout_weight = st.slider("Weight for Democrat Turnout", min_value=0.0, max_value=1.0, step=0.05)
     rep_turnout_weight = st.slider("Weight for Republican Turnout", min_value=0.0, max_value=1.0, step=0.05)
     npa_turnout_weight = st.slider("Weight for NPA/Other Turnout", min_value=0.0, max_value=1.0, step=0.05)
