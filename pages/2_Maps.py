@@ -8,8 +8,11 @@ import os
 def main():
 
   st.set_page_config(layout="wide",page_title="Visualizer", page_icon=":globe_with_meridians:")
-
-  st.title("Campaign Visualizer Tool")
+  col1,col2 = st.columns(2)
+  with col1:
+    st.title("Campaign Visualizer Tool")
+  with col2:
+    st.image("Campaign-Visualizer_Logo.png",width=200)
   st.subheader("Map your campaign data to chart your path to victory.")
   st.write("This is a product of Strategy Ace LLC")
   st.write("version: BETAv0.1")
