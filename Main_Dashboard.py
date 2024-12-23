@@ -16,7 +16,7 @@ def main():
   # Calculate the difference in days
   days_until = (future_date - today).days
   
-  st.subheader(f"{days_until} days until Election Day!")
+  st.subheader(f":red[{days_until}] days until Election Day!")
   st.image('Orlando_City_Map.png')
 
 if __name__ == "__main__":
