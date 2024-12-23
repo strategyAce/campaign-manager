@@ -132,6 +132,8 @@ def main():
     
             PrioritRegNum = selected_origdf["TOTAL REGISTERED"].sum()
             totaldem = (selected_origdf["PCT DEM"]*selected_origdf["TOTAL REGISTERED"]).sum()
+            totalrep = (selected_origdf["PCT REP"]*selected_origdf["TOTAL REGISTERED"]).sum()
+            totalnpa = (selected_origdf["PCT NPA"]*selected_origdf["TOTAL REGISTERED"]).sum()
     
             st.subheader(" ")
             st.write("Here is your full list of precincts in order from highest to lowest score:")
@@ -140,11 +142,11 @@ def main():
             st.metric("Total Registered Voters", int(PrioritRegNum))
             col1, col2, col3 = st.columns(3)
             with col1:
-               st.metric("Total Dem Voters", int(PrioritRegNum))
+               st.metric("Total Dem Voters", int(totaldem))
             with col2:
-               st.metric("Total Rep Voters", int(PrioritRegNum))
+               st.metric("Total Rep Voters", int(totalrep))
             with col3:
-               st.metric("Total NPA/Other Voters", int(PrioritRegNum))
+               st.metric("Total NPA Voters", int(totalnpa))
             st.divider()
 
         else:
