@@ -218,25 +218,6 @@ def election_runup_report(df):
         # Display the chart
         st.pyplot(plt)
     
-        st.subheader("")
-        # EV Party Breadkdown Pie Chart
-        # Calculate the percentage of each vote type
-        ev_dem = (df['EV-DEM'].sum() / df['EV-CUM'].iloc[-1]) * 100
-        ev_rep = (df['EV-REP'].sum() / df['EV-CUM'].iloc[-1]) * 100
-        ev_npa = (df['EV-NPA'].sum() / df['EV-CUM'].iloc[-1]) * 100
-        # Create the pie chart
-        plt.figure(figsize=(6, 6))
-        # Define the data for the pie chart
-        data = [ev_dem, ev_rep, ev_npa]
-        labels = ['Dem', 'Rep', 'NPA/Other']
-        colors = ['blue', 'red', 'green']
-        # Create the pie chart
-        plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
-        # Add title
-        plt.title('Early Voting by Party')
-        # Display the chart
-        st.pyplot(plt)
-    
         st.divider()
         #Analysis tool for determining current race status
         st.header("The Guestimator Tool")
