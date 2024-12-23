@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
+st.set_page_config(page_title="Manager App", page_icon=":ballot_box_with_ballot:")
 
 def main():
   col1,col2 = st.columns(2)
