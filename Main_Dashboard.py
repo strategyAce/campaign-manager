@@ -6,6 +6,7 @@ from datetime import datetime
 st.set_page_config(page_title="Manager App", page_icon=":ballot_box_with_ballot:")
 
 def main():
+  st.image("Eskamani_Banner.png",width=700)
   col1,col2 = st.columns(2)
   with col1:
     st.title("TBD Mayoral Race")
