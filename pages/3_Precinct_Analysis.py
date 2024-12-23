@@ -41,9 +41,9 @@ def main():
     st.divider()
 
     # Dropdown for selecting the political party
-    st.header("Select the Party to optimize for")
+    #st.header("Select the Party to optimize for")
     #party_choice = st.selectbox("Select Political Party for Favorability Score", ["Democrat","Republican", "NPA"])
-    st.divider()
+    #st.divider()
 
     st.header("Set Weights to Match Your Campaign's Strategy")
     st.write("Use the sliders below to adjust each parameter weight. Please note that the total for all weights needs to equal 1.0.")
