@@ -9,7 +9,7 @@ def main():
   with col1:
     st.title("TBD Mayoral Race")
   with col2:
-    st.image("Woman_User_Profile.png",width=200)
+    st.image("Woman_User_Profile.png",width=150)
   
   # Input the future date (format: YYYY-MM-DD)
   future_date_str = "2027-11-02"
