@@ -5,7 +5,11 @@ from datetime import datetime
 
 
 def main():
-  st.title("TBD Mayoral Race")
+  col1,col2 = st.columns(2)
+  with col1:
+    st.title("TBD Mayoral Race")
+  with col2:
+    st.image("Woman_User_Profile.png",width=200)
   
   # Input the future date (format: YYYY-MM-DD)
   future_date_str = "2027-11-02"
@@ -14,11 +18,8 @@ def main():
   today = datetime.today()
   # Calculate the difference in days
   days_until = (future_date - today).days
-  col1,col2 = st.columns(2)
-  with col1:
-    st.subheader(f":blue[{days_until}] days until Election Day!")
-  with col2:
-    st.image("Woman_User_Profile.png",width=200)
+  
+  st.subheader(f":blue[{days_until}] days until Election Day!")
   
 
   #Dashboard Values
