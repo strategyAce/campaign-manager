@@ -57,8 +57,8 @@ def main():
     npa_turnout_weight = st.slider("Weight for NPA/Other Turnout", min_value=0.0, max_value=1.0, step=0.05)
 
     # Calculate total weight
-    total_weight = (total_registered_weight + dem_voter_weight + rep_voters_weight +
-            npa_voters_weight + dem_turnout_weight + rep_turnout_weight + npa_turnout_weight)
+    total_weight = (total_registered_weight + dem_voter_weight + rep_voter_weight +
+            npa_voter_weight + dem_turnout_weight + rep_turnout_weight + npa_turnout_weight)
 
     # Display total weight
     st.subheader(f"Current Total Weight: {total_weight:.2f}")
