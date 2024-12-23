@@ -31,6 +31,7 @@ def main():
         """)
         
     # Display the logo on the main page
+    st.image("Eskamani_Banner.png",width=700)
     col1,col2 = st.columns(2)
     with col1:
        st.title("Precinct Analysis Tool")
