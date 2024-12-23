@@ -128,7 +128,7 @@ def voter_engagement_report(df):
     
     st.subheader("") # add spacing
     st.write("Click here to produce a pdf file of this report:")
-    st.button("Print Report", key=print, type="primary")
+    st.button("Print Report", key=print, onclick="window.print()", type="primary")
     st.divider()
 
 # Election Runup Analysis Report logic
