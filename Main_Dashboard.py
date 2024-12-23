@@ -20,10 +20,10 @@ def main():
   with st.container():
     st.subheader("Campaign Overview")
     col1,col2 = st.columns(2)
-      with col1:
-        st.metric(label="Total Number of County Precincts", value="100")
-      with col2:
-        st.metric(label="Total Registered Voters", value="1000")
+    with col1:
+      st.metric(label="Total Number of County Precincts", value="100")
+    with col2:
+      st.metric(label="Total Registered Voters", value="1000")
     st.image('Orlando_City_Map.png')
     
   
