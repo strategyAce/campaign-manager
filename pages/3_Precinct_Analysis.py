@@ -110,7 +110,7 @@ def main():
                 total_registered_weight * newdf["TOTAL REGISTERED"] +
                 dem_voter_weight * newdf["PCT DEM"] +
                 rep_voter_weight * newdf["PCT REP"] +
-                npa_voters_weight * newdf["PCT NPA"] +
+                npa_voter_weight * newdf["PCT NPA"] +
                 dem_turnout_weight * newdf["DEM TURNOUT"] + 
                 rep_turnout_weight * newdf["REP TURNOUT"] + 
                 npa_turnout_weight * newdf["NPA TURNOUT"]
