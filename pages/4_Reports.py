@@ -273,6 +273,13 @@ def election_runup_report(df):
         st.subheader("") # add spacing
         st.write("Click here to produce a pdf file of this report:")
         st.button("Print Report", key=print, type="primary")
+
+        st.markdown(
+        """
+        <button onclick="window.print()">Print this page</button>
+        """,
+        unsafe_allow_html=True
+        )
         st.divider()
 
 # Main application
