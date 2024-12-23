@@ -312,6 +312,7 @@ def main():
     else:
         st.info("Please upload or specify a valid CSV file.")
 
+    #App Footer
     st.divider()
     st.image("StratAceBanner_Logo.png",width=300)
     st.write("https://strategyace.win/")
