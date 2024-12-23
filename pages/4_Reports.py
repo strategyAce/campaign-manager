@@ -282,7 +282,7 @@ def main():
         st.title("Campaign Reporter Tool")
     with col2:
         st.image("Campaign-Reporter_Logo.png",width=150)
-    st.subheader("Create a precinct list optimized for your campaign's strategy.")
+    st.subheader("Review and generate tailored campaign reports")
     st.write("This is a product of Strategy Ace LLC")
     st.write("version: BETAv0.1")
     st.divider()
