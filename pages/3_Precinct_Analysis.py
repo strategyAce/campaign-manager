@@ -37,8 +37,6 @@ def main():
     with col2:
        st.image("Campaign-Prioritizer_Logo.png",width=150)
     st.subheader("View key precinct data and create a priority list optimized for your campaign's strategy.")    
-    st.write("This is a product of Strategy Ace LLC")
-    st.write("version: BETAv0.1")
     st.divider()
 
     # Dropdown for selecting the political party
