@@ -19,7 +19,7 @@ def main():
   # Calculate the difference in days
   days_until = (future_date - today).days
   
-  st.subheader(f":blue[{days_until}] days until Election Day!")
+  st.subheader(f":blue[{days_until}] days until Election Day on 11/02/2027 !")
   
 
   #Dashboard Values
