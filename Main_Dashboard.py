@@ -24,6 +24,14 @@ def main():
       st.metric(label="Total Number of County Precincts", value="100")
     with col2:
       st.metric(label="Total Registered Voters", value="1000")
+    col1,col2,col3 = st.columns(3)
+    with col1:
+      st.metric(label="Total Number Republicans", value="100")
+    with col2:
+      st.metric(label="Total Number Democrats", value="100")
+    with col3:
+      st.metric(label="Total Number NPAs/Others", value="100")
+    st.write("*Data updated on 12/22/2024*")
     st.image('Orlando_City_Map.png')
     
   
