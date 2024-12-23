@@ -158,6 +158,7 @@ def main():
     else:
         st.info("Please upload or specify a valid CSV file and ensure the weights sum to 1.0.")
 
+    # App Footer
     st.divider()
     st.image("StratAceBanner_Logo.png",width=300)
     st.write("https://strategyace.win/")
