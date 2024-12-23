@@ -4,10 +4,11 @@ import geopandas as gpd
 import plotly.express as px
 import os
 
+st.set_page_config(layout="wide",page_title="Visualizer", page_icon=":globe_with_meridians:")
 
 def main():
 
-  st.set_page_config(layout="wide",page_title="Visualizer", page_icon=":globe_with_meridians:")
+  st.image("Eskamani_Banner.png",width=700)
   col1,col2 = st.columns(2)
   with col1:
     st.title("Campaign Visualizer Tool")
