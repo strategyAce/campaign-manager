@@ -42,20 +42,23 @@ def main():
 
     # Dropdown for selecting the political party
     st.header("Select the Party to optimize for")
-    party_choice = st.selectbox("Select Political Party for Favorability Score", ["Democrat","Republican", "NPA"])
+    #party_choice = st.selectbox("Select Political Party for Favorability Score", ["Democrat","Republican", "NPA"])
     st.divider()
 
     st.header("Set Weights to Match Your Campaign's Strategy")
     st.write("Use the sliders below to adjust each parameter weight. Please note that the total for all weights needs to equal 1.0.")
     # Inputs for weights
     total_registered_weight = st.slider("Weight for Total Registered Voters", min_value=0.0, max_value=1.0, step=0.05)
-    party_favorability_weight = st.slider("Weight for Party Favorability", min_value=0.0, max_value=1.0, step=0.05)
-    swing_voters_weight = st.slider("Weight for Swing Voters", min_value=0.0, max_value=1.0, step=0.05)
-    party_turnout_weight = st.slider("Weight for Party Turnout", min_value=0.0, max_value=1.0, step=0.05)
+    dem_voter_weight = st.slider("Weight for Total Democrat Voters", min_value=0.0, max_value=1.0, step=0.05)
+    rep_voters_weight = st.slider("Weight for Total Republican Voters", min_value=0.0, max_value=1.0, step=0.05)
+    npa_voters_weight = st.slider("Weight for Total NPA/Other Voters", min_value=0.0, max_value=1.0, step=0.05)
+    dem_turnout_weight = st.slider("Weight for Democrat Turnout", min_value=0.0, max_value=1.0, step=0.05)
+    rep_turnout_weight = st.slider("Weight for Republican Turnout", min_value=0.0, max_value=1.0, step=0.05)
+    npa_turnout_weight = st.slider("Weight for NPA/Other Turnout", min_value=0.0, max_value=1.0, step=0.05)
 
     # Calculate total weight
-    total_weight = (total_registered_weight + party_favorability_weight +
-            swing_voters_weight + party_turnout_weight)
+    total_weight = (total_registered_weight + dem_voter_weight + rep_voters_weight +
+            npa_voters_weight + dem_turnout_weight + rep_turnout_weight + npa_turnout_weight)
 
     # Display total weight
     st.subheader(f"Current Total Weight: {total_weight:.2f}")
@@ -102,29 +105,15 @@ def main():
 
             newdf[score_columns] = scaler.fit_transform(origdf[score_columns])
 
-            # Set the party favorability column based on the selected party
-            if party_choice == "Democrat":
-                favorability_column = "PCT DEM"
-                turnout_column = "DEM TURNOUT"
-                newdf["PARTY TOTAL"] = np.ceil((origdf["TOTAL REGISTERED"]*origdf["PCT DEM"]))
-            elif party_choice == "Republican":
-                favorability_column = "PCT REP"
-                turnout_column = "REP TURNOUT"
-                newdf["PARTY TOTAL"] = np.ceil((origdf["TOTAL REGISTERED"]*origdf["PCT REP"]))
-            elif party_choice == "NPA":
-                favorability_column = "PCT NPA"
-                turnout_column = "NPA TURNOUT"
-                newdf["PARTY TOTAL"] = np.ceil((origdf["TOTAL REGISTERED"]*origdf["PCT NPA"]))
-            else:
-                st.error("Invalid party choice. Please select a valid party.")
-                return
-
             # Calculate weighted score for each precinct
             newdf['Score'] = (
                 total_registered_weight * newdf["TOTAL REGISTERED"] +
-                party_favorability_weight * newdf[favorability_column] +
-                swing_voters_weight * newdf["PCT NPA"] +
-                party_turnout_weight * newdf[turnout_column]
+                dem_voter_weight * newdf["PCT DEM"] +
+                rep_voter_weight * newdf["PCT REP"] +
+                npa_voters_weight * newdf["PCT NPA"] +
+                dem_turnout_weight * newdf["DEM TURNOUT"] + 
+                rep_turnout_weight * newdf["REP TURNOUT"] + 
+                npa_turnout_weight * newdf["NPA TURNOUT"] +
             )
             
             # Sort by score in descending order
