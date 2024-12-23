@@ -41,7 +41,7 @@ def main():
     # App Header
     col1,col2 = st.columns(2)
     with col1:
-        st.title("Campaign Predictor Tool")
+        st.title("Campaign Win Analysis Tool")
     with col2:
         st.image("Campaign-Predictor.png",width=150)
     st.subheader("Run predictions that can give your campaign an edge up on the competition")
