@@ -14,8 +14,6 @@ def main():
   with col2:
     st.image("Campaign-Visualizer_Logo.png",width=150)
   st.subheader("Map your campaign data to chart your path to victory.")
-  st.write("This is a product of Strategy Ace LLC")
-  st.write("version: BETAv0.1")
   st.divider()
   
   # Define the Maps to be Displayed
