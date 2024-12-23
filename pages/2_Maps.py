@@ -4,18 +4,13 @@ import geopandas as gpd
 import plotly.express as px
 import os
 
-LOGO_PATH = "Campaign-Visualizer_Logo.png"
 
 def main():
 
   st.set_page_config(layout="wide",page_title="Visualizer", page_icon=":globe_with_meridians:")
 
-  col1,col2 = st.columns(2)
-  with col1:
-      st.title("Campaign Visualizer Tool")
-      st.subheader("Map your campaign data to chart your path to victory.")
-  with col2: 
-      st.image(LOGO_PATH, width=250) 
+  st.title("Campaign Visualizer Tool")
+  st.subheader("Map your campaign data to chart your path to victory.")
   st.write("This is a product of Strategy Ace LLC")
   st.write("version: BETAv0.1")
   st.divider()
