@@ -19,7 +19,7 @@ def main():
   #Dashboard Values
   with st.container():
     st.subheader("Campaign Overview")
-    col1,col2 = st.columns()
+    col1,col2 = st.columns(2)
       with col1:
         st.metric(label="Total Number of County Precincts", value="100")
       with col2:
