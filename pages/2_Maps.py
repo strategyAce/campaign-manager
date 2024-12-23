@@ -8,7 +8,7 @@ LOGO_PATH = "Campaign-Visualizer_Logo.png"
 
 def main():
 
-  st.set_page_config(layout="wide")
+  st.set_page_config(layout="wide",page_title="Visualizer", page_icon=":globe_with_meridians:")
 
   col1,col2 = st.columns(2)
   with col1:
