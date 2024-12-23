@@ -128,24 +128,7 @@ def voter_engagement_report(df):
     
     st.subheader("") # add spacing
     st.write("Click here to produce a pdf file of this report:")
-    #st.button("Print Report", key=print, type="primary")
-    st.markdown(
-    """
-    <style>
-    .print-button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-    }
-    </style>
-    <button class="print-button" onclick="window.print()">Print this page</button>
-    """,
-    unsafe_allow_html=True
-    )
+    st.button("Print Report", key=print, type="primary") #TO-DO (report gen function add)    
     st.divider()
 
 # Election Runup Analysis Report logic
