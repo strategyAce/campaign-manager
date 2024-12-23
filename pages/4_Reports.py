@@ -289,8 +289,7 @@ def election_runup_report(df):
         </style>
         <button class="print-button" onclick="window.print()">Print this page</button>
         """,
-        unsafe_allow_html=True
-        )
+        unsafe_allow_html=True)
         st.divider()
 
 # Main application
