@@ -129,6 +129,10 @@ def main():
             fig = plot_election_results(election_results)
             st.pyplot(fig)
 
+    # App Footer
+    st.divider()
+    st.image("StratAceBanner_Logo.png",width=300)
+    st.write("https://strategyace.win/")
 
 if __name__ == "__main__":
     main()
