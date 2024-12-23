@@ -6,19 +6,28 @@ from datetime import datetime
 
 def main():
   st.title("TBD Mayoral Race")
+  
   # Input the future date (format: YYYY-MM-DD)
   future_date_str = "2027-11-02"
   future_date = datetime.strptime(future_date_str, "%Y-%m-%d")
-
   # Get today's date
   today = datetime.today()
-  
   # Calculate the difference in days
   days_until = (future_date - today).days
-  
   st.subheader(f":blue[{days_until}] days until Election Day!")
-  st.image('Orlando_City_Map.png')
 
+  #Dashboard Values
+  with st.container():
+    st.subheader("Campaign Overview")
+    col1,col2 = st.columns()
+      with col1:
+        st.metric(label="Total Number of County Precincts", value="100")
+      with col2:
+        st.metric(label="Total Registered Voters", value="1000")
+    st.image('Orlando_City_Map.png')
+    
+  
+  #App Footer
   st.divider()
   st.image("StratAceBanner_Logo.png",width=300)
   st.write("https://strategyace.win/")
