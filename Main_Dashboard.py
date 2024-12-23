@@ -19,5 +19,9 @@ def main():
   st.subheader(f":blue[{days_until}] days until Election Day!")
   st.image('Orlando_City_Map.png')
 
+  st.divider()
+  st.image("StratAceBanner_Logo.png",width=300)
+  st.write("https://strategyace.win/")
+
 if __name__ == "__main__":
     main()
