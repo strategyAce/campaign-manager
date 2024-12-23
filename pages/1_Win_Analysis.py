@@ -43,7 +43,7 @@ def main():
     with col1:
         st.title("Campaign Predictor Tool")
     with col2:
-        st.image("Campaign-Predictor.png",width=200)
+        st.image("Campaign-Predictor.png",width=150)
     st.subheader("Run predictions that can give your campaign an edge up on the competition")
     st.write("This is a product of Strategy Ace LLC")
     st.write("Version: BETAv0.1...date:09/29/2024")
