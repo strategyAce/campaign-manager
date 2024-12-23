@@ -17,7 +17,7 @@ def main():
   st.subheader(f":blue[{days_until}] days until Election Day!")
 
   #Dashboard Values
-  with st.container(border=True)
+  with st.container(border=True):
     st.subheader("Campaign Overview")
     col1,col2 = st.columns(2)
     with col1:
