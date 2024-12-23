@@ -9,7 +9,7 @@ def main():
   st.image("Eskamani_Banner.png",width=700)
   col1,col2 = st.columns(2)
   with col1:
-    st.title("TBD Mayoral Race")
+    st.title("Orlando Mayoral Race")
   with col2:
     st.image("Woman_User_Profile.png",width=150)
   
