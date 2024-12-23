@@ -276,7 +276,18 @@ def election_runup_report(df):
 
         st.markdown(
         """
-        <button onclick="window.print()">Print this page</button>
+        <style>
+        .print-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        </style>
+        <button class="print-button" onclick="window.print()">Print this page</button>
         """,
         unsafe_allow_html=True
         )
