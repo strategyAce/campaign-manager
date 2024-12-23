@@ -281,7 +281,7 @@ def main():
     with col1:
         st.title("Campaign Reporter Tool")
     with col2:
-        st.image("Campaign-Reporter_Logo.png",width=200)
+        st.image("Campaign-Reporter_Logo.png",width=150)
     st.subheader("Create a precinct list optimized for your campaign's strategy.")
     st.write("This is a product of Strategy Ace LLC")
     st.write("version: BETAv0.1")
@@ -311,6 +311,10 @@ def main():
             election_runup_report(df)
     else:
         st.info("Please upload or specify a valid CSV file.")
+
+    st.divider()
+    st.image("StratAceBanner_Logo.png",width=300)
+    st.write("https://strategyace.win/")
 
 if __name__ == "__main__":
     main()
