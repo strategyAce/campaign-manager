@@ -294,6 +294,7 @@ def election_runup_report(df):
 
 # Main application
 def main():
+    st.image("Eskamani_Banner.png",width=700)
     col1, col2 = st.columns(2)
     with col1:
         st.title("Campaign Reporter Tool")
