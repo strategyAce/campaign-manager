@@ -202,16 +202,19 @@ def election_runup_report(df):
         vbm_dem = (df['VBM-DEM'].sum() / df['VBM-CUM'].iloc[-1]) * 100
         vbm_rep = (df['VBM-REP'].sum() / df['VBM-CUM'].iloc[-1]) * 100
         vbm_npa = (df['VBM-NPA'].sum() / df['VBM-CUM'].iloc[-1]) * 100
+        ev_dem = (df['EV-DEM'].sum() / df['EV-CUM'].iloc[-1]) * 100
+        ev_rep = (df['EV-REP'].sum() / df['EV-CUM'].iloc[-1]) * 100
+        ev_npa = (df['EV-NPA'].sum() / df['EV-CUM'].iloc[-1]) * 100
         # Create the pie chart
         plt.figure(figsize=(6, 6))
         # Define the data for the pie chart
-        data = [vbm_dem, vbm_rep, vbm_npa]
-        labels = ['Dem', 'Rep', 'NPA/Other']
-        colors = ['blue', 'red', 'green']
+        data = [vbm_dem, vbm_rep, vbm_npa, ev_dem, ev_rep, ev_npa]
+        labels = ['Dem VBM', 'Rep VBM', 'NPA/Other VBM', 'Dem EV', 'Rep EV', 'NPA/Other EV']
+        colors = ['blue', 'red', 'green', 'dodgerblue', 'orangered', 'limegreen']
         # Create the pie chart
         plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
         # Add title
-        plt.title('Vote By Mail by Party')
+        plt.title('Vote Method by Party')
         # Display the chart
         st.pyplot(plt)
     
