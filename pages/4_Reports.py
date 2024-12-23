@@ -210,7 +210,7 @@ def election_runup_report(df):
         # Define the data for the pie chart
         data = [vbm_dem, vbm_rep, vbm_npa, ev_dem, ev_rep, ev_npa]
         labels = ['Dem VBM', 'Rep VBM', 'NPA/Other VBM', 'Dem EV', 'Rep EV', 'NPA/Other EV']
-        colors = ['blue', 'red', 'green', 'dodgerblue', 'orangered', 'limegreen']
+        colors = ['blue', 'red', 'green', 'dodgerblue', 'salmon', 'seagreen']
         # Create the pie chart
         plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
         # Add title
