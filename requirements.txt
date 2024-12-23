@@ -4,4 +4,4 @@ numpy==1.26.0
 matplotlib==3.8.2
 geopandas
 plotly
-sklearn
+scikit-learn
