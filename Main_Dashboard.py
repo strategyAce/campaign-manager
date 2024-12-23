@@ -14,7 +14,12 @@ def main():
   today = datetime.today()
   # Calculate the difference in days
   days_until = (future_date - today).days
-  st.subheader(f":blue[{days_until}] days until Election Day!")
+  col1,col2 = st.columns(2)
+  with col1:
+    st.subheader(f":blue[{days_until}] days until Election Day!")
+  with col2:
+    st.image("Woman_User_Profile.png",width=200)
+  
 
   #Dashboard Values
   with st.container(border=True):
