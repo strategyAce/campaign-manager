@@ -68,18 +68,19 @@ def voter_engagement_report(df):
     
     lastrow = df.iloc[-1]
     secondlastrow = df.iloc[-2]
-    st.subheader("Metrics At A Glance")
-    prevTotalReached = int(secondlastrow.drop("DATE").sum())
-    totalReached = int(lastrow.drop("DATE").sum())
-    prevTotalcanvassed = int(totalcanvasscolumn.iloc[-2])
-    totalcanvassed = int(totalcanvasscolumn.iloc[-1])
-    col1,col2 =st.columns(2)
-    with col1:
-      st.write(f"Current update date: {df['DATE'].iloc[-1]}")
-      st.metric("Total Voters Reached", value = totalReached, delta = totalReached-prevTotalReached)
-    with col2:
-      st.write(f"Previous update date: {df['DATE'].iloc[-2]}")
-      st.metric("Total Canvassed", value = totalcanvassed, delta = totalcanvassed-prevTotalcanvassed)
+    with st.container:
+        st.subheader("Metrics At A Glance")
+        prevTotalReached = int(secondlastrow.drop("DATE").sum())
+        totalReached = int(lastrow.drop("DATE").sum())
+        prevTotalcanvassed = int(totalcanvasscolumn.iloc[-2])
+        totalcanvassed = int(totalcanvasscolumn.iloc[-1])
+        col1,col2 =st.columns(2)
+        with col1:
+          st.write(f"Current update date: {df['DATE'].iloc[-1]}")
+          st.metric("Total Voters Reached", value = totalReached, delta = totalReached-prevTotalReached)
+        with col2:
+          st.write(f"Previous update date: {df['DATE'].iloc[-2]}")
+          st.metric("Total Canvassed", value = totalcanvassed, delta = totalcanvassed-prevTotalcanvassed)
     
     st.subheader(" ")
     # Create Engagement over Time Line Plot
