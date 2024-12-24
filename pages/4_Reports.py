@@ -246,8 +246,8 @@ def election_runup_report(df):
         plt.xticks([p + width/2 for p in x], categories)
         plt.legend()
         # Show the chart
-        #plt.tight_layout()
-        plt.show()
+        plt.tight_layout()
+        st.pyplot(plt)
     
         st.divider()
         #Analysis tool for determining current race status
