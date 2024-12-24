@@ -233,6 +233,11 @@ def election_runup_report(df):
         rep_data = [vbm_rep_reg, vbm_rep_vote, ev_rep_vote] 
         npa_data = [vbm_npa_reg, vbm_npa_vote, ev_npa_vote]
         categories = ['Registered to Vote by Mail', 'Voted by Mail', 'Voted Early']
+        # Debugging: Display data in Streamlit
+        st.write("Democrats Data:", dem_data)
+        st.write("Republicans Data:", rep_data)
+        st.write("NPA Data:", npa_data)
+        st.write("Categories:", categories)
         # Plot the data
         x = range(len(categories))
         width = 0.35  # Width of bars
