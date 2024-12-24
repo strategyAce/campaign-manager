@@ -137,7 +137,7 @@ def election_runup_report(df):
     st.header("Election Results Report")
 
     # Ensure required columns are present in the CSV file
-    required_columns = ["DATE", "VBM-DEM", "VBM-REP", "VBM-NPA", "VBM-TOTAL", "VBM-CUM", "EV-DEM", "EV-REP", "EV-NPA","EV-TOTAL","EV-CUM","ED-DEM","ED-REP","ED-NPA","ED-TOTAL","TOTAL VOTES","CUM TOTAL"]
+    required_columns = ["DATE", "VBM-DEM-REG", "VBM-DEM", "VBM-REP-REG", "VBM-REP", "VBM-NPA-REG", "VBM-NPA", "VBM-TOTAL", "VBM-CUM", "EV-DEM", "EV-REP", "EV-NPA","EV-TOTAL","EV-CUM","ED-DEM","ED-REP","ED-NPA","ED-TOTAL","TOTAL VOTES","CUM TOTAL"]
     if set(df.columns) == set(required_columns):
         col1,col2 =st.columns(2)
         with col1:
@@ -197,7 +197,7 @@ def election_runup_report(df):
         st.pyplot(plt)
     
         st.subheader("")
-        # VBM Party Breadkdown Pie Chart
+        # Voter Method Party Breadkdown Pie Chart
         # Calculate the percentage of each vote type
         vbm_dem = (df['VBM-DEM'].sum() / df['VBM-CUM'].iloc[-1]) * 100
         vbm_rep = (df['VBM-REP'].sum() / df['VBM-CUM'].iloc[-1]) * 100
@@ -217,6 +217,37 @@ def election_runup_report(df):
         plt.title('Vote Method by Party')
         # Display the chart
         st.pyplot(plt)
+
+        st.subheader("")
+        # Voter Method Party Breadkdown Pie Chart
+        vbm_dem_reg = df['VBM-DEM-REG'].iloc[-1]
+        vbm_dem_vote = df['VBM-DEM'].iloc[-1]
+        vbm_rep_reg = df['VBM-REP-REG'].iloc[-1]
+        vbm_rep_vote = df['VBM-REP'].iloc[-1]
+        vbm_npa_reg = df['VBM-NPA-REG'].iloc[-1]
+        vbm_npa_vote = df['VBM-NPA'].iloc[-1]
+        ev_dem_vote = df['EV-DEM'].iloc[-1]
+        ev_rep_vote = df['EV-REP'].iloc[-1]
+        ev_npa_vote = df['EV-NPA'].iloc[-1]
+        dem_data = [vbm_dem_reg, vbm_dem_vote, ev_dem_vote] 
+        rep_data = [vbm_rep_reg, vbm_rep_vote, ev_rep_vote] 
+        npa_data = [vbm_npa_reg, vbm_npa_vote, ev_npa_vote]
+        categories = ['Registered to Vote by Mail', 'Voted by Mail', 'Voted Early']
+        # Plot the data
+        x = range(len(categories))
+        width = 0.35  # Width of bars
+        fig, ax = plt.subplots(figsize=(8, 6))
+        plt.bar(x, dem_data, width=width, label='Democrats', color='blue', alpha=0.7)
+        plt.bar([p + width for p in x], rep_data, width=width, label='Republicans', color='red', alpha=0.7)
+        # Customize the chart
+        plt.xlabel('Category')
+        plt.ylabel('Number of Voters')
+        plt.title('Voter Data by Party')
+        plt.xticks([p + width/2 for p in x], categories)
+        plt.legend()
+        # Show the chart
+        plt.tight_layout()
+        plt.show()
     
         st.divider()
         #Analysis tool for determining current race status
