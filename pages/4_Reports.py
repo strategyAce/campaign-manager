@@ -58,9 +58,9 @@ def voter_engagement_report(df):
     totalRepText = df[Rep_text].iloc[-1].sum()
     #Calculate NPA Values
     Npa_columns = [col for col in df.columns if col.endswith("-NPA")]
-    Rep_canvass = [col for col in df.columns if col.endswith("-NPA") & col.startswith("DOOR-")]
-    Rep_call = [col for col in df.columns if col.endswith("-NPA") & col.startswith("CALL-")]
-    Rep_text = [col for col in df.columns if col.endswith("-NPA") & col.startswith("TEXT-")]
+    Npa_canvass = [col for col in df.columns if col.endswith("-NPA") & col.startswith("DOOR-")]
+    Npa_call = [col for col in df.columns if col.endswith("-NPA") & col.startswith("CALL-")]
+    Npa_text = [col for col in df.columns if col.endswith("-NPA") & col.startswith("TEXT-")]
     totalNpacolumn = df[Npa_columns].sum(axis=1)
     totalNpaCanvass = df[Npa_canvass].iloc[-1].sum()
     totalNpaCall = df[Npa_call].iloc[-1].sum()
