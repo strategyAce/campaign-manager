@@ -200,9 +200,9 @@ def election_runup_report(df):
         x_rep = x  # Centered for Republicans
         x_npa = [p + width for p in x]  # Shift right for No Party Affiliation
         fig, ax = plt.subplots(figsize=(8, 6))
-        plt.bar(x_dem, dem_data, width=width, label='Democrats', color='blue', alpha=0.7)
-        plt.bar(x_rep, rep_data, width=width, label='Republicans', color='red', alpha=0.7)
-        plt.bar(x_npa, npa_data, width=width, label='No Party Affiliation', color='green', alpha=0.7)
+        bars_dem = plt.bar(x_dem, dem_data, width=width, label='Democrats', color='blue', alpha=0.7)
+        bars_rep = plt.bar(x_rep, rep_data, width=width, label='Republicans', color='red', alpha=0.7)
+        bars_npa = plt.bar(x_npa, npa_data, width=width, label='No Party Affiliation', color='green', alpha=0.7)
         # Add values above the bars
         def add_labels(bars):
             for bar in bars:
