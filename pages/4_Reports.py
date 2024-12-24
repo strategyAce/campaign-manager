@@ -203,6 +203,20 @@ def election_runup_report(df):
         plt.bar(x_dem, dem_data, width=width, label='Democrats', color='blue', alpha=0.7)
         plt.bar(x_rep, rep_data, width=width, label='Republicans', color='red', alpha=0.7)
         plt.bar(x_npa, npa_data, width=width, label='No Party Affiliation', color='green', alpha=0.7)
+        # Add values above the bars
+        def add_labels(bars):
+            for bar in bars:
+                height = bar.get_height()
+                ax.text(
+                    bar.get_x() + bar.get_width() / 2,  # Center text horizontally
+                    height,  # Position text at the top of the bar
+                    f'{int(height)}',  # Format the value as an integer
+                    ha='center', va='bottom', fontsize=10, color='black'
+                )
+        # Add labels for all bar groups
+        add_labels(bars_dem)
+        add_labels(bars_rep)
+        add_labels(bars_npa)
         # Customize the chart
         plt.xlabel('Category')
         plt.ylabel('Number of Voters')
