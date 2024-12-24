@@ -38,13 +38,25 @@ def voter_engagement_report(df):
     totalcallcolumn = df[call_columns].sum(axis=1)
     canvas_columns = [col for col in df.columns if col.startswith("DOOR-")]
     totalcanvasscolumn = df[canvas_columns].sum(axis=1)
+    #Calculate Dem Values
     Dem_columns = [col for col in df.columns if col.endswith("-DEM")]
     Dem_canvass = [col for col in df.columns if col.endswith("-DEM") & col.startswith("DOOR-")]
-    st.write(Dem_canvass)
-
+    Dem_call = [col for col in df.columns if col.endswith("-DEM") & col.startswith("CALL-")]
+    Dem_text = [col for col in df.columns if col.endswith("-DEM") & col.startswith("TEXT-")]
     totalDemcolumn = df[Dem_columns].sum(axis=1)
+    totalDemCanvass = df[Dem_canvass].iloc[-1].sum()
+    totalDemCall = df[Dem_call].iloc[-1].sum()
+    totalDemText = df[Dem_text].iloc[-1].sum()
+    #Calculate Rep Values
     Rep_columns = [col for col in df.columns if col.endswith("-REP")]
+    Rep_canvass = [col for col in df.columns if col.endswith("-REP") & col.startswith("DOOR-")]
+    Rep_call = [col for col in df.columns if col.endswith("-REP") & col.startswith("CALL-")]
+    Rep_text = [col for col in df.columns if col.endswith("-REP") & col.startswith("TEXT-")]
     totalRepcolumn = df[Rep_columns].sum(axis=1)
+    totalRepCanvass = df[Rep_canvass].iloc[-1].sum()
+    totalRepCall = df[Rep_call].iloc[-1].sum()
+    totalRepText = df[Rep_text].iloc[-1].sum()
+    
     Npa_columns = [col for col in df.columns if col.endswith("-NPA")]
     totalNpacolumn = df[Npa_columns].sum(axis=1)
     
