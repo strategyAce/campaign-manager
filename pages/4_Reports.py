@@ -39,7 +39,7 @@ def voter_engagement_report(df):
     canvas_columns = [col for col in df.columns if col.startswith("DOOR-")]
     totalcanvasscolumn = df[canvas_columns].sum(axis=1)
     Dem_columns = [col for col in df.columns if col.endswith("-DEM")]
-    Dem_canvass = [col for col in df.columns if col.endswith("-DEM") && col.startswith("DOOR-")]
+    Dem_canvass = [col for col in df.columns if col.endswith("-DEM") & col.startswith("DOOR-")]
     st.write(Dem_canvass)
 
     totalDemcolumn = df[Dem_columns].sum(axis=1)
