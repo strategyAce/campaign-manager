@@ -131,7 +131,7 @@ def voter_engagement_report(df):
         })
     fig, ax = plt.subplots(figsize=(8, 6))
     barchartdata.plot(x="Party", y="Voters", kind="bar", ax=ax, color=["dodgerblue", "red", "goldenrod"])
-    ax.set_title("Engagements By Party")
+    ax.set_title("Engagements Per Party")
     ax.set_xlabel("Party")
     ax.set_ylabel("Voters")
     st.pyplot(fig)
@@ -167,9 +167,9 @@ def voter_engagement_report(df):
     add_labels(bars_rep)
     add_labels(bars_npa)
     # Customize the chart
-    plt.xlabel('Category')
+    plt.xlabel('Engagement Type')
     plt.ylabel('Number of Voters')
-    plt.title('Engagement Data by Party')
+    plt.title('Engagement Type by Party')
     plt.xticks([p + width/2 for p in x], categories)
     plt.legend()
     # Show the chart
