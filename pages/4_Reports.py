@@ -233,11 +233,12 @@ def election_runup_report(df):
         rep_data = [vbm_rep_reg, vbm_rep_vote, ev_rep_vote] 
         npa_data = [vbm_npa_reg, vbm_npa_vote, ev_npa_vote]
         categories = ['Registered to Vote by Mail', 'Voted by Mail', 'Voted Early']
+        x = range(len(categories))
+        width = 0.25  # Reduce the bar width to make space for all groups
         # Plot the data
         x_dem = [p - width for p in x]  # Shift left for Democrats
         x_rep = x  # Centered for Republicans
         x_npa = [p + width for p in x]  # Shift right for No Party Affiliation
-        width = 0.35  # Width of bars
         fig, ax = plt.subplots(figsize=(8, 6))
         plt.bar(x_dem, dem_data, width=width, label='Democrats', color='blue', alpha=0.7)
         plt.bar(x_rep, rep_data, width=width, label='Republicans', color='red', alpha=0.7)
