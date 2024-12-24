@@ -25,7 +25,6 @@ def load_csv(data_source, uploaded_file=None, drive_path=None):
 def voter_engagement_report(df):
     st.divider()
     st.header("Voter Engagement Results Report")
-    st.write("Select which engagements you would like included in the report")
 
     st.divider()
     # Convert all columns except 'DATE' to numeric
@@ -40,6 +39,7 @@ def voter_engagement_report(df):
     canvas_columns = [col for col in df.columns if col.startswith("DOOR-")]
     totalcanvasscolumn = df[canvas_columns].sum(axis=1)
     Dem_columns = [col for col in df.columns if col.endswith("-DEM")]
+    st.write(Dem_columns)
     totalDemcolumn = df[Dem_columns].sum(axis=1)
     DemCanvass = [col for col in Dem_columns.columns if col.startswith("DOOR-")].iloc[-1].sum(axis=1)
     st.write(DemCanvass)
