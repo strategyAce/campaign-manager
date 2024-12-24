@@ -234,12 +234,14 @@ def election_runup_report(df):
         npa_data = [vbm_npa_reg, vbm_npa_vote, ev_npa_vote]
         categories = ['Registered to Vote by Mail', 'Voted by Mail', 'Voted Early']
         # Plot the data
-        x = range(len(categories))
+        x_dem = [p - width for p in x]  # Shift left for Democrats
+        x_rep = x  # Centered for Republicans
+        x_npa = [p + width for p in x]  # Shift right for No Party Affiliation
         width = 0.35  # Width of bars
         fig, ax = plt.subplots(figsize=(8, 6))
-        plt.bar(x, dem_data, width=width, label='Democrats', color='blue', alpha=0.7)
-        plt.bar([p + width for p in x], rep_data, width=width, label='Republicans', color='red', alpha=0.7)
-        plt.bar([p + 2 * width for p in x], npa_data, width=width, label='No Party Affiliation', color='green', alpha=0.7)
+        plt.bar(x_dem, dem_data, width=width, label='Democrats', color='blue', alpha=0.7)
+        plt.bar(x_rep, rep_data, width=width, label='Republicans', color='red', alpha=0.7)
+        plt.bar(x_npa, npa_data, width=width, label='No Party Affiliation', color='green', alpha=0.7)
         # Customize the chart
         plt.xlabel('Category')
         plt.ylabel('Number of Voters')
