@@ -179,46 +179,6 @@ def election_runup_report(df):
         st.pyplot(plt)
     
         st.subheader("")
-        # VBM vs Early Vote Pie Chart
-        # Calculate the percentage of each vote type
-        vote_by_mail_percentage = (df['VBM-CUM'].iloc[-1] / df['CUM TOTAL'].iloc[-1]) * 100
-        early_vote_percentage = (df['EV-CUM'].iloc[-1]/ df['CUM TOTAL'].iloc[-1]) * 100
-        # Create the pie chart
-        plt.figure(figsize=(6, 6))
-        # Define the data for the pie chart
-        data = [vote_by_mail_percentage, early_vote_percentage]
-        labels = ['Vote By Mail', 'Early Vote']
-        colors = ['lightblue', 'lightgreen']
-        # Create the pie chart
-        plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
-        # Add title
-        plt.title('Vote By Mail vs. Early Vote')
-        # Display the chart
-        st.pyplot(plt)
-    
-        st.subheader("")
-        # Voter Method Party Breadkdown Pie Chart
-        # Calculate the percentage of each vote type
-        vbm_dem = (df['VBM-DEM'].sum() / df['VBM-CUM'].iloc[-1]) * 100
-        vbm_rep = (df['VBM-REP'].sum() / df['VBM-CUM'].iloc[-1]) * 100
-        vbm_npa = (df['VBM-NPA'].sum() / df['VBM-CUM'].iloc[-1]) * 100
-        ev_dem = (df['EV-DEM'].sum() / df['EV-CUM'].iloc[-1]) * 100
-        ev_rep = (df['EV-REP'].sum() / df['EV-CUM'].iloc[-1]) * 100
-        ev_npa = (df['EV-NPA'].sum() / df['EV-CUM'].iloc[-1]) * 100
-        # Create the pie chart
-        plt.figure(figsize=(6, 6))
-        # Define the data for the pie chart
-        data = [vbm_dem, vbm_rep, vbm_npa, ev_dem, ev_rep, ev_npa]
-        labels = ['Dem VBM', 'Rep VBM', 'NPA/Other VBM', 'Dem EV', 'Rep EV', 'NPA/Other EV']
-        colors = ['blue', 'red', 'green', 'dodgerblue', 'salmon', 'seagreen']
-        # Create the pie chart
-        plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
-        # Add title
-        plt.title('Vote Method by Party')
-        # Display the chart
-        st.pyplot(plt)
-
-        st.subheader("")
         # Voter Method Party Breadkdown Pie Chart
         vbm_dem_reg = df['VBM-DEM-REG'].iloc[-1]
         vbm_dem_vote = df['VBM-DEM'].iloc[-1]
@@ -251,6 +211,46 @@ def election_runup_report(df):
         plt.legend()
         # Show the chart
         plt.tight_layout()
+        st.pyplot(plt)
+    
+        st.subheader("")
+        # Voter Method Party Breadkdown Pie Chart
+        # Calculate the percentage of each vote type
+        vbm_dem = (df['VBM-DEM'].sum() / df['VBM-CUM'].iloc[-1]) * 100
+        vbm_rep = (df['VBM-REP'].sum() / df['VBM-CUM'].iloc[-1]) * 100
+        vbm_npa = (df['VBM-NPA'].sum() / df['VBM-CUM'].iloc[-1]) * 100
+        ev_dem = (df['EV-DEM'].sum() / df['EV-CUM'].iloc[-1]) * 100
+        ev_rep = (df['EV-REP'].sum() / df['EV-CUM'].iloc[-1]) * 100
+        ev_npa = (df['EV-NPA'].sum() / df['EV-CUM'].iloc[-1]) * 100
+        # Create the pie chart
+        plt.figure(figsize=(6, 6))
+        # Define the data for the pie chart
+        data = [vbm_dem, vbm_rep, vbm_npa, ev_dem, ev_rep, ev_npa]
+        labels = ['Dem VBM', 'Rep VBM', 'NPA/Other VBM', 'Dem EV', 'Rep EV', 'NPA/Other EV']
+        colors = ['blue', 'red', 'green', 'dodgerblue', 'salmon', 'seagreen']
+        # Create the pie chart
+        plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+        # Add title
+        plt.title('Vote Method by Party')
+        # Display the chart
+        st.pyplot(plt)
+
+        st.subheader("")
+        # VBM vs Early Vote Pie Chart
+        # Calculate the percentage of each vote type
+        vote_by_mail_percentage = (df['VBM-CUM'].iloc[-1] / df['CUM TOTAL'].iloc[-1]) * 100
+        early_vote_percentage = (df['EV-CUM'].iloc[-1]/ df['CUM TOTAL'].iloc[-1]) * 100
+        # Create the pie chart
+        plt.figure(figsize=(6, 6))
+        # Define the data for the pie chart
+        data = [vote_by_mail_percentage, early_vote_percentage]
+        labels = ['Vote By Mail', 'Early Vote']
+        colors = ['lightblue', 'lightgreen']
+        # Create the pie chart
+        plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+        # Add title
+        plt.title('Vote By Mail vs. Early Vote')
+        # Display the chart
         st.pyplot(plt)
     
         st.divider()
