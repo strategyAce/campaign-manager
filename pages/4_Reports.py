@@ -56,9 +56,15 @@ def voter_engagement_report(df):
     totalRepCanvass = df[Rep_canvass].iloc[-1].sum()
     totalRepCall = df[Rep_call].iloc[-1].sum()
     totalRepText = df[Rep_text].iloc[-1].sum()
-    
+    #Calculate NPA Values
     Npa_columns = [col for col in df.columns if col.endswith("-NPA")]
+    Rep_canvass = [col for col in df.columns if col.endswith("-NPA") & col.startswith("DOOR-")]
+    Rep_call = [col for col in df.columns if col.endswith("-NPA") & col.startswith("CALL-")]
+    Rep_text = [col for col in df.columns if col.endswith("-NPA") & col.startswith("TEXT-")]
     totalNpacolumn = df[Npa_columns].sum(axis=1)
+    totalNpaCanvass = df[Npa_canvass].iloc[-1].sum()
+    totalNpaCall = df[Npa_call].iloc[-1].sum()
+    totalNpaText = df[Npa_text].iloc[-1].sum()
     
     lastrow = df.iloc[-1]
     secondlastrow = df.iloc[-2]
@@ -131,16 +137,9 @@ def voter_engagement_report(df):
 
     st.subheader("")
     # Engagement Party Breadkdown Bar Chart
-    canvass_dem = df['VBM-DEM-REG'].iloc[-1]
-    canvass_rep = df['VBM-REP-REG'].iloc[-1]
-    vbm_npa_reg = df['VBM-NPA-REG'].iloc[-1]
-    vbm_npa_vote = df['VBM-NPA'].iloc[-1]
-    ev_dem_vote = df['EV-DEM'].iloc[-1]
-    ev_rep_vote = df['EV-REP'].iloc[-1]
-    ev_npa_vote = df['EV-NPA'].iloc[-1]
-    dem_data = [canvass_dem, call_dem, text_dem] 
-    rep_data = [canvass_rep, call_rep, text_rep]  
-    npa_data = [canvass_npa, call_npa, text_npa]  
+    dem_data = [totalDemCanvass, totalDemCall, totalDemText] 
+    rep_data = [totalRepCanvass, totalRepCall, totalRepText] 
+    npa_data = [totalNpaCanvass, totalNpaCall, totalNpaText]
     categories = ['Canvass', 'Call', 'Text']
     x = range(len(categories))
     width = 0.25  # Reduce the bar width to make space for all groups
