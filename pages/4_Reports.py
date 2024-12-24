@@ -68,7 +68,7 @@ def voter_engagement_report(df):
     
     lastrow = df.iloc[-1]
     secondlastrow = df.iloc[-2]
-    with st.container:
+    with st.container(border=True):
         st.subheader("Metrics At A Glance")
         prevTotalReached = int(secondlastrow.drop("DATE").sum())
         totalReached = int(lastrow.drop("DATE").sum())
