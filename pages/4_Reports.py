@@ -120,8 +120,6 @@ def voter_engagement_report(df):
     st.subheader("")
     # Engagement Party Breadkdown Bar Chart
     canvass_dem = df['VBM-DEM-REG'].iloc[-1]
-    call_dem =
-    text_dem = 
     canvass_rep = df['VBM-REP-REG'].iloc[-1]
     vbm_npa_reg = df['VBM-NPA-REG'].iloc[-1]
     vbm_npa_vote = df['VBM-NPA'].iloc[-1]
