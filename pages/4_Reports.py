@@ -28,11 +28,11 @@ def voter_engagement_report(df):
     st.write("Select which engagements you would like included in the report")
     col1,col2,col3 = st.columns(3)
     with col1:
-      textop = st.checkbox("Include Texts")
+      textop = st.checkbox("Include Texts",value = True)
     with col2:
-      callop = st.checkbox("Include Calls")
+      callop = st.checkbox("Include Calls", value = True)
     with col3:
-      canvassop = st.checkbox("Include Canvasses")
+      canvassop = st.checkbox("Include Canvasses", value = True)
     st.divider()
     # Convert all columns except 'DATE' to numeric
     # Convert columns to numeric, handling non-numeric values
