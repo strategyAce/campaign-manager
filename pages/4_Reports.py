@@ -26,13 +26,7 @@ def voter_engagement_report(df):
     st.divider()
     st.header("Voter Engagement Results Report")
     st.write("Select which engagements you would like included in the report")
-    col1,col2,col3 = st.columns(3)
-    with col1:
-      textop = st.checkbox("Include Texts",value = True)
-    with col2:
-      callop = st.checkbox("Include Calls", value = True)
-    with col3:
-      canvassop = st.checkbox("Include Canvasses", value = True)
+
     st.divider()
     # Convert all columns except 'DATE' to numeric
     # Convert columns to numeric, handling non-numeric values
@@ -47,6 +41,8 @@ def voter_engagement_report(df):
     totalcanvasscolumn = df[canvas_columns].sum(axis=1)
     Dem_columns = [col for col in df.columns if col.endswith("-DEM")]
     totalDemcolumn = df[Dem_columns].sum(axis=1)
+    DemCanvass = [col for col in Dem_columns.columns if col.startswith("DOOR-")].iloc[-1].sum(axis=1)
+    st.write(DemCanvass)
     Rep_columns = [col for col in df.columns if col.endswith("-REP")]
     totalRepcolumn = df[Rep_columns].sum(axis=1)
     Npa_columns = [col for col in df.columns if col.endswith("-NPA")]
@@ -120,6 +116,56 @@ def voter_engagement_report(df):
     ax.set_xlabel("Party")
     ax.set_ylabel("Voters")
     st.pyplot(fig)
+
+    st.subheader("")
+    # Engagement Party Breadkdown Bar Chart
+    canvass_dem = df['VBM-DEM-REG'].iloc[-1]
+    call_dem =
+    text_dem = 
+    canvass_rep = df['VBM-REP-REG'].iloc[-1]
+    vbm_npa_reg = df['VBM-NPA-REG'].iloc[-1]
+    vbm_npa_vote = df['VBM-NPA'].iloc[-1]
+    ev_dem_vote = df['EV-DEM'].iloc[-1]
+    ev_rep_vote = df['EV-REP'].iloc[-1]
+    ev_npa_vote = df['EV-NPA'].iloc[-1]
+    dem_data = [canvass_dem, call_dem, text_dem] 
+    rep_data = [canvass_rep, call_rep, text_rep]  
+    npa_data = [canvass_npa, call_npa, text_npa]  
+    categories = ['Canvass', 'Call', 'Text']
+    x = range(len(categories))
+    width = 0.25  # Reduce the bar width to make space for all groups
+    # Plot the data
+    x_dem = [p - width for p in x]  # Shift left for Democrats
+    x_rep = x  # Centered for Republicans
+    x_npa = [p + width for p in x]  # Shift right for No Party Affiliation
+    fig, ax = plt.subplots(figsize=(8, 6))
+    bars_dem = plt.bar(x_dem, dem_data, width=width, label='Democrats', color='blue', alpha=0.7)
+    bars_rep = plt.bar(x_rep, rep_data, width=width, label='Republicans', color='red', alpha=0.7)
+    bars_npa = plt.bar(x_npa, npa_data, width=width, label='No Party Affiliation', color='green', alpha=0.7)
+    # Add values above the bars
+    def add_labels(bars):
+        for bar in bars:
+            height = bar.get_height()
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,  # Center text horizontally
+                height,  # Position text at the top of the bar
+                f'{int(height)}',  # Format the value as an integer
+                ha='center', va='bottom', fontsize=10, color='black'
+            )
+    # Add labels for all bar groups
+    add_labels(bars_dem)
+    add_labels(bars_rep)
+    add_labels(bars_npa)
+    # Customize the chart
+    plt.xlabel('Category')
+    plt.ylabel('Number of Voters')
+    plt.title('Engagement Data by Party')
+    plt.xticks([p + width/2 for p in x], categories)
+    plt.legend()
+    # Show the chart
+    plt.tight_layout()
+    st.pyplot(plt)
+
     
     #Full data table
     st.subheader(" ")
@@ -130,6 +176,7 @@ def voter_engagement_report(df):
     st.write("Click here to produce a pdf file of this report:")
     st.button("Print Report", key=print, type="primary") #TO-DO (report gen function add)    
     st.divider()
+
 
 # Election Runup Analysis Report logic
 def election_runup_report(df):
@@ -179,7 +226,7 @@ def election_runup_report(df):
         st.pyplot(plt)
     
         st.subheader("")
-        # Voter Method Party Breadkdown Pie Chart
+        # Voter Method Party Breadkdown Bar Chart
         vbm_dem_reg = df['VBM-DEM-REG'].iloc[-1]
         vbm_dem_vote = df['VBM-DEM'].iloc[-1]
         vbm_rep_reg = df['VBM-REP-REG'].iloc[-1]
