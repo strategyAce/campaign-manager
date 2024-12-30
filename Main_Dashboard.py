@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from datetime import datetime
+import os
 
 st.set_page_config(page_title="Manager App", page_icon=":ballot_box_with_ballot:")
 
@@ -41,7 +42,15 @@ def main():
       st.metric(label="Total Number NPAs/Others", value="100")
     st.write("*Data updated on 12/22/2024*")
     st.image('Orlando_City_Map.png')
-    
+
+  #Campaign Voter Universe
+  st.subheader("")
+  st.subheader("Voter Universe")
+  if os.path.exists(voter_universe.csv):
+    voteruniverse = pd.read_csv("voter_universe.csv")
+    st.table(voteruniverse, hide_index=True)
+  else:
+    st.warning("No Voter Universe File Found")
   
   #App Footer
   st.divider()
