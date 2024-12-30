@@ -48,7 +48,8 @@ def main():
   st.subheader("Voter Universe")
   if os.path.exists("voter_universe.csv"):
     voteruniverse = pd.read_csv("voter_universe.csv")
-    st.table(voteruniverse)
+    df = pd.DataFrame(voteruniverse)
+    st.table(df.style.hide_index())
   else:
     st.warning("No Voter Universe File Found")
   
