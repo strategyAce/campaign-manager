@@ -18,8 +18,11 @@ def main():
   st.divider()
   
   # Define the Maps to be Displayed
+
+  #Map1 Campaign Google Map
+  gmap_url = "https://maps.app.goo.gl/BNxnDmPRFJ3T3X4s8?g_st=ig"
   
-  #Map1 script from mapbox
+  #Map2 script from mapbox
   map1_script = """
   <!DOCTYPE html>
   <html>
@@ -49,7 +52,7 @@ def main():
   </html>
   """
   
-  #Map2 script from mapbox
+  #Map3 script from mapbox
   map2_script = """
   <!DOCTYPE html>
   <html>
@@ -80,6 +83,12 @@ def main():
   """
   
   # Display the map in Streamlit
+  st.subheader("Your Custom Campaign Google Maps")
+  st.components.v1.iframe(map_url, width=800, height=600)
+  st.write("This is an embedded custom Google Map customized for your campaign. You can zoom, click, and interact with the map. Google maps like these can contain specific data layers that can be toggled On and Off and can be easily shared with campaign personnel and volunteers.")
+  st.subheader(" ")
+  st.divider()
+  
   st.subheader("Percentage of Registered Democrats")
   st.components.v1.html(map1_script, height=600)
   st.subheader(" ")
