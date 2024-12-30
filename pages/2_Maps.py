@@ -84,7 +84,7 @@ def main():
   
   # Display the map in Streamlit
   st.subheader("Your Custom Campaign Google Maps")
-  st.components.v1.iframe(map_url, width=800, height=600)
+  st.components.v1.iframe(gmap_url, width=800, height=600)
   st.write("This is an embedded custom Google Map customized for your campaign. You can zoom, click, and interact with the map. Google maps like these can contain specific data layers that can be toggled On and Off and can be easily shared with campaign personnel and volunteers.")
   st.subheader(" ")
   st.divider()
