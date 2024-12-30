@@ -49,8 +49,9 @@ def main():
   if os.path.exists("voter_universe.csv"):
     voteruniverse = pd.read_csv("voter_universe.csv")
     df = pd.DataFrame(voteruniverse)
-    df.style.set_properties(**{'font-size': '40pt'})
     st.dataframe(df, hide_index=True)
+    df.style.set_properties(**{'font-size': '40pt'})
+
   else:
     st.warning("No Voter Universe File Found")
   
