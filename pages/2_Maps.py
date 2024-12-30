@@ -20,7 +20,7 @@ def main():
   # Define the Maps to be Displayed
 
   #Map1 Campaign Google Map
-  gmap_url = "https://maps.app.goo.gl/BNxnDmPRFJ3T3X4s8?g_st=ig"
+  gmap_url = "https://www.google.com/maps/d/u/0/edit?mid=1AJzBf1DCR3d_quOVH2hMoJO_yjNvSKc&usp=sharing"
   
   #Map2 script from mapbox
   map1_script = """
