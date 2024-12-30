@@ -20,7 +20,8 @@ def main():
   # Define the Maps to be Displayed
 
   #Map1 Campaign Google Map
-  gmap_url = "https://www.google.com/maps/d/edit?mid=1AJzBf1DCR3d_quOVH2hMoJO_yjNvSKc&usp=sharing"
+  #gmap_url = "https://www.google.com/maps/d/edit?mid=1AJzBf1DCR3d_quOVH2hMoJO_yjNvSKc&usp=sharing"
+  gmap_script = """<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AJzBf1DCR3d_quOVH2hMoJO_yjNvSKc&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>"""
   
   #Map2 script from mapbox
   map1_script = """
@@ -84,7 +85,7 @@ def main():
   
   # Display the map in Streamlit
   st.subheader("Your Custom Campaign Google Maps")
-  st.components.v1.iframe(gmap_url, width=800, height=600)
+  st.components.v1.html(gmap_script, height=600)
   st.write("This is an embedded custom Google Map customized for your campaign. You can zoom, click, and interact with the map. Google maps like these can contain specific data layers that can be toggled On and Off and can be easily shared with campaign personnel and volunteers.")
   st.subheader(" ")
   st.divider()
