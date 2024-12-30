@@ -21,7 +21,7 @@ def main():
 
   #Map1 Campaign Google Map
   #gmap_url = "https://www.google.com/maps/d/edit?mid=1AJzBf1DCR3d_quOVH2hMoJO_yjNvSKc&usp=sharing"
-  gmap_script = """<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AJzBf1DCR3d_quOVH2hMoJO_yjNvSKc&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>"""
+  gmap_script = """<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AJzBf1DCR3d_quOVH2hMoJO_yjNvSKc&ehbc=2E312F&noprof=1" width="800" height="600"></iframe>"""
   
   #Map2 script from mapbox
   map1_script = """
