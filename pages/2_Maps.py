@@ -92,11 +92,13 @@ def main():
   
   st.subheader("Percentage of Registered Democrats")
   st.components.v1.html(map1_script, height=600)
+  st.write("This is an embedded custom map created with the professional GIS tool called MapBox. You are seeing the official SoE GIS precinct border data displayed with data driven circles presenting curated SoE demographic data. Maps can be modified and tailored for your needs.")
   st.subheader(" ")
   st.divider()
   
   st.subheader("Total Registered Voters")
   st.components.v1.html(map2_script, height=600)
+  st.write("This is an embedded custom map created with the professional GIS tool called MapBox. You are seeing the official SoE GIS precinct border data displayed with data driven circles presenting curated SoE demographic data. Maps can be modified and tailored for your needs.")
   st.subheader(" ")
   st.divider()
   
