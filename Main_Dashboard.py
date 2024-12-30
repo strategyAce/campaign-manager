@@ -49,7 +49,7 @@ def main():
   if os.path.exists("voter_universe.csv"):
     voteruniverse = pd.read_csv("voter_universe.csv")
     df = pd.DataFrame(voteruniverse)
-    st.dataframe(df.style.set_properties(**{'font-size': '30pt'}), hide_index=True)
+    st.dataframe(df, hide_index=True)
   else:
     st.warning("No Voter Universe File Found")
   
