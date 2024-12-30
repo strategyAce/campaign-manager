@@ -46,7 +46,7 @@ def main():
   #Campaign Voter Universe
   st.subheader("")
   st.subheader("Voter Universe")
-  if os.path.exists(voter_universe.csv):
+  if os.path.exists("voter_universe.csv"):
     voteruniverse = pd.read_csv("voter_universe.csv")
     st.table(voteruniverse, hide_index=True)
   else:
