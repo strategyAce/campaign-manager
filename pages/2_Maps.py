@@ -58,7 +58,7 @@ def main():
                   new mapboxgl.Popup()
                       .setLngLat(coordinates)
                       .setHTML(
-                          `<h3>Precinct: ${properties.precinct}</h3>` +
+                          `<h3>Precinct: ${properties.PRECINCT}</h3>` +
                           `<p>Address: ${properties.address}</p>` +
                           `<p>Data: ${properties.data}</p>`
                       )
