@@ -51,7 +51,7 @@ def main():
 
           map.on('load', () => {
               // Add a click event for the existing data-driven-circles layer
-              map.on('click', 'data-driven-circle', (e) => {
+              map.on('click', 'data-driven-circles', (e) => {
                   const coordinates = e.features[0].geometry.coordinates.slice();
                   const properties = e.features[0].properties;
 
