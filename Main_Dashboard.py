@@ -38,6 +38,13 @@ def main():
       st.metric(label="Total Number Republicans", value="100")
     with col2:
       st.metric(label="Total Number Democrats", value="100")
+        st.subheader("Voter Universe")
+      if os.path.exists("voter_universe.csv"):
+        voteruniverse = pd.read_csv("voter_universe.csv")
+        df = pd.DataFrame(voteruniverse)
+        st.dataframe(df, hide_index=True)
+      else:
+        st.warning("No Voter Universe File Found")
     with col3:
       st.metric(label="Total Number NPAs/Others", value="100")
     st.write("*Data updated on 12/22/2024*")
