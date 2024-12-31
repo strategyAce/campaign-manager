@@ -179,7 +179,7 @@ def main():
   
   #App Footer
   st.divider()
-  st.image(BANNER_PATH,width=300)
+  st.image("StratAceBanner_Logo.png",width=300)
   st.write(url)
 
 if __name__ == "__main__":
