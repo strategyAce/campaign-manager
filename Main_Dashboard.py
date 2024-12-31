@@ -21,7 +21,7 @@ def main():
   today = datetime.today()
   # Calculate the difference in days
   days_until = (future_date - today).days
-  
+  st.write("")
   st.subheader(f":blue[{days_until}] days until Election Day on 11/02/2027 !")
   st.subheader("")
 
