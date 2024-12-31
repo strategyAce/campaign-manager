@@ -40,6 +40,7 @@ def main():
       st.metric(label="Total Number Democrats", value="100")
     with col3:
       st.metric(label="Total Number NPAs/Others", value="100")
+    st.write("")
     st.subheader("Voter Universe")
     if os.path.exists("voter_universe.csv"):
       voteruniverse = pd.read_csv("voter_universe.csv")
