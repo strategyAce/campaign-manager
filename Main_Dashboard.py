@@ -42,13 +42,14 @@ def main():
     with col3:
       st.metric(label="Total Number NPAs/Others", value="100")
     st.write("")
-    st.subheader("Voter Universe")
+    st.subheader("Your Voter Universe")
     if os.path.exists("voter_universe.csv"):
       voteruniverse = pd.read_csv("voter_universe.csv")
       df = pd.DataFrame(voteruniverse)
       st.dataframe(df, hide_index=True)
     else:
       st.warning("No Voter Universe File Found")
+    st.write("Hot=Last 2 Gen & last 2 Prim, Warmer=Last 2 Gen & last Prim, Warm=Last 2 Gen, Infreq=At least 1 vote in either last 2 Gen or 2 Prim")
     st.write("*Data updated on 12/22/2024*")
   
   #Campaign Map
