@@ -49,7 +49,7 @@ def main():
               zoom: 11 // starting zoom
           });
 
-          // Add dummy data points
+          // Add data-driven circles layer
           const geojson = {
               "type": "FeatureCollection",
               "features": [
@@ -60,8 +60,9 @@ def main():
                           "coordinates": [-81.379234, 28.567760]
                       },
                       "properties": {
-                          "title": "Location 1",
-                          "description": "This is location 1."
+                          "precinct": "Precinct 1",
+                          "address": "123 Main St",
+                          "data1": "Value 1"
                       }
                   },
                   {
@@ -71,45 +72,54 @@ def main():
                           "coordinates": [-81.380234, 28.568760]
                       },
                       "properties": {
-                          "title": "Location 2",
-                          "description": "This is location 2."
+                          "precinct": "Precinct 2",
+                          "address": "456 Elm St",
+                          "data1": "Value 2"
                       }
                   }
               ]
           };
 
-          // Add markers to the map
-          geojson.features.forEach((feature) => {
-              const el = document.createElement('div');
-              el.className = 'marker';
-              el.style.backgroundColor = 'blue';
-              el.style.width = '20px';
-              el.style.height = '20px';
-              el.style.borderRadius = '50%';
-
-              new mapboxgl.Marker(el)
-                  .setLngLat(feature.geometry.coordinates)
-                  .setPopup(
-                      new mapboxgl.Popup({ offset: 25 }) // Add popups
-                          .setHTML(
-                              `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
-                          )
-                  )
-                  .addTo(map);
-          });
-
-          // Add a click event
-          map.on('click', (e) => {
-              const features = map.queryRenderedFeatures(e.point, {
-                  layers: [] // Specify the layer if applicable
+          map.on('load', () => {
+              map.addSource('data-driven-circles', {
+                  type: 'geojson',
+                  data: geojson
               });
 
-              if (features.length) {
-                  const feature = features[0];
-                  alert(`You clicked on: ${feature.properties.title}`);
-              } else {
-                  alert('No feature found at clicked location.');
-              }
+              map.addLayer({
+                  id: 'data-driven-circles',
+                  type: 'circle',
+                  source: 'data-driven-circles',
+                  paint: {
+                      'circle-radius': 10,
+                      'circle-color': '#007cbf'
+                  }
+              });
+
+              // Add a click event for the layer
+              map.on('click', 'data-driven-circles', (e) => {
+                  const coordinates = e.features[0].geometry.coordinates.slice();
+                  const properties = e.features[0].properties;
+
+                  new mapboxgl.Popup()
+                      .setLngLat(coordinates)
+                      .setHTML(
+                          `<h3>Precinct: ${properties.precinct}</h3>` +
+                          `<p>Address: ${properties.address}</p>` +
+                          `<p>Data: ${properties.data1}</p>`
+                      )
+                      .addTo(map);
+              });
+
+              // Change the cursor to a pointer when over the layer
+              map.on('mouseenter', 'data-driven-circles', () => {
+                  map.getCanvas().style.cursor = 'pointer';
+              });
+
+              // Change it back when it leaves
+              map.on('mouseleave', 'data-driven-circles', () => {
+                  map.getCanvas().style.cursor = '';
+              });
           });
       </script>
   </body>
