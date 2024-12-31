@@ -49,55 +49,9 @@ def main():
               zoom: 11 // starting zoom
           });
 
-          // Add data-driven circles layer
-          const geojson = {
-              "type": "FeatureCollection",
-              "features": [
-                  {
-                      "type": "Feature",
-                      "geometry": {
-                          "type": "Point",
-                          "coordinates": [-81.379234, 28.567760]
-                      },
-                      "properties": {
-                          "precinct": "Precinct 1",
-                          "address": "123 Main St",
-                          "data1": "Value 1"
-                      }
-                  },
-                  {
-                      "type": "Feature",
-                      "geometry": {
-                          "type": "Point",
-                          "coordinates": [-81.380234, 28.568760]
-                      },
-                      "properties": {
-                          "precinct": "Precinct 2",
-                          "address": "456 Elm St",
-                          "data1": "Value 2"
-                      }
-                  }
-              ]
-          };
-
           map.on('load', () => {
-              map.addSource('data-driven-circles', {
-                  type: 'geojson',
-                  data: geojson
-              });
-
-              map.addLayer({
-                  id: 'data-driven-circles',
-                  type: 'circle',
-                  source: 'data-driven-circles',
-                  paint: {
-                      'circle-radius': 10,
-                      'circle-color': '#007cbf'
-                  }
-              });
-
-              // Add a click event for the layer
-              map.on('click', 'data-driven-circles', (e) => {
+              // Add a click event for the existing data-driven-circles layer
+              map.on('click', 'Data-driven circles, data-driven-circles', (e) => {
                   const coordinates = e.features[0].geometry.coordinates.slice();
                   const properties = e.features[0].properties;
 
