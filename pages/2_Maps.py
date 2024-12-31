@@ -51,7 +51,7 @@ def main():
 
           map.on('load', () => {
               // Add a click event for the existing data-driven-circles layer
-              map.on('click', 'precincts-20240415-shapefile-4g4p5r', (e) => {
+              map.on('click', 'data-driven-circle', (e) => {
                   const coordinates = e.features[0].geometry.coordinates.slice();
                   const properties = e.features[0].properties;
 
@@ -66,12 +66,12 @@ def main():
               });
 
               // Change the cursor to a pointer when over the layer
-              map.on('mouseenter', 'precincts-20240415-shapefile-4g4p5r', () => {
+              map.on('mouseenter', 'data-driven-circle', () => {
                   map.getCanvas().style.cursor = 'pointer';
               });
 
               // Change it back when it leaves
-              map.on('mouseleave', 'precincts-20240415-shapefile-4g4p5r', () => {
+              map.on('mouseleave', 'data-driven-circle', () => {
                   map.getCanvas().style.cursor = '';
               });
           });
