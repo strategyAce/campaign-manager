@@ -19,36 +19,99 @@ def main():
   
   # Define the Maps to be Displayed
 
-  #Map1 Campaign Google Map
+  #Campaign Google Map
   #gmap_url = "https://www.google.com/maps/d/edit?mid=1AJzBf1DCR3d_quOVH2hMoJO_yjNvSKc&usp=sharing"
   gmap_script = """<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AJzBf1DCR3d_quOVH2hMoJO_yjNvSKc&ehbc=2E312F&noprof=1" width="1000" height="600"></iframe>"""
   
-  #Map2 script from mapbox
+  #Map script from mapbox
   map1_script = """
   <!DOCTYPE html>
   <html>
   <head>
-  <meta charset="utf-8">
-  <title>Display a map with click interaction</title>
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <link href="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css" rel="stylesheet">
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js"></script>
-  <style>
-  body { margin: 0; padding: 0; }
-  #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-  </style>
+      <meta charset="utf-8">
+      <title>Display a map with click interaction</title>
+      <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+      <link href="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css" rel="stylesheet">
+      <script src="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js"></script>
+      <style>
+          body { margin: 0; padding: 0; }
+          #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+      </style>
   </head>
   <body>
-  <div id="map"></div>
-  <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYXNoMTgyNSIsImEiOiJjbTF2M3J5M3EwN3ZhMmpvZXI1MzRnbGIxIn0.Ahb-c79xp6uR9gEyGGWsgQ'; // Replace with your access token
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/ash1825/cm39ap0uk01mh01pd02x04lag', // Replace with your style URL
-        center: [-81.379234, 28.567760], // starting position
-        zoom: 11 // starting zoom
-    });
-  </script>
+      <div id="map"></div>
+      <script>
+          mapboxgl.accessToken = 'pk.eyJ1IjoiYXNoMTgyNSIsImEiOiJjbTF2M3J5M3EwN3ZhMmpvZXI1MzRnbGIxIn0.Ahb-c79xp6uR9gEyGGWsgQ'; // Replace with your access token
+          const map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/ash1825/cm39ap0uk01mh01pd02x04lag', // Replace with your style URL
+              center: [-81.379234, 28.567760], // starting position
+              zoom: 11 // starting zoom
+          });
+
+          // Add dummy data points
+          const geojson = {
+              "type": "FeatureCollection",
+              "features": [
+                  {
+                      "type": "Feature",
+                      "geometry": {
+                          "type": "Point",
+                          "coordinates": [-81.379234, 28.567760]
+                      },
+                      "properties": {
+                          "title": "Location 1",
+                          "description": "This is location 1."
+                      }
+                  },
+                  {
+                      "type": "Feature",
+                      "geometry": {
+                          "type": "Point",
+                          "coordinates": [-81.380234, 28.568760]
+                      },
+                      "properties": {
+                          "title": "Location 2",
+                          "description": "This is location 2."
+                      }
+                  }
+              ]
+          };
+
+          // Add markers to the map
+          geojson.features.forEach((feature) => {
+              const el = document.createElement('div');
+              el.className = 'marker';
+              el.style.backgroundColor = 'blue';
+              el.style.width = '20px';
+              el.style.height = '20px';
+              el.style.borderRadius = '50%';
+
+              new mapboxgl.Marker(el)
+                  .setLngLat(feature.geometry.coordinates)
+                  .setPopup(
+                      new mapboxgl.Popup({ offset: 25 }) // Add popups
+                          .setHTML(
+                              `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+                          )
+                  )
+                  .addTo(map);
+          });
+
+          // Add a click event
+          map.on('click', (e) => {
+              const features = map.queryRenderedFeatures(e.point, {
+                  layers: [] // Specify the layer if applicable
+              });
+
+              if (features.length) {
+                  const feature = features[0];
+                  alert(`You clicked on: ${feature.properties.title}`);
+              } else {
+                  alert('No feature found at clicked location.');
+              }
+          });
+      </script>
   </body>
   </html>
   """
