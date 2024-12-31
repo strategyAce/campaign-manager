@@ -24,7 +24,7 @@ def main():
   st.write("")
   st.subheader(f":blue[{days_until}] days until Election Day on 11/02/2027 !")
   st.subheader("")
-  st.subheader("Your Campaign Win Number is  :blue[41,000]")
+  st.subheader("Your Campaign Win Number is  :blue[41,000] votes.")
 
   #Dashboard Values
   with st.container(border=True):
