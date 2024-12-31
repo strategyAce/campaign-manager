@@ -38,7 +38,7 @@ def main():
       st.metric(label="Total Number Republicans", value="100")
     with col2:
       st.metric(label="Total Number Democrats", value="100")
-        st.subheader("Voter Universe")
+      st.subheader("Voter Universe")
       if os.path.exists("voter_universe.csv"):
         voteruniverse = pd.read_csv("voter_universe.csv")
         df = pd.DataFrame(voteruniverse)
