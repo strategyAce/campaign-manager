@@ -24,6 +24,7 @@ def main():
   st.write("")
   st.subheader(f":blue[{days_until}] days until Election Day on 11/02/2027 !")
   st.subheader("")
+  st.subheader("Your Campaign Win Number is  :blue[41,000]")
 
   #Dashboard Values
   with st.container(border=True):
@@ -41,7 +42,6 @@ def main():
     with col3:
       st.metric(label="Total Number NPAs/Others", value="100")
     st.write("")
-    st.subheader("Win Number is :blue[41,000]")
     st.subheader("Voter Universe")
     if os.path.exists("voter_universe.csv"):
       voteruniverse = pd.read_csv("voter_universe.csv")
