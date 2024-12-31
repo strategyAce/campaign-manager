@@ -66,12 +66,12 @@ def main():
               });
 
               // Change the cursor to a pointer when over the layer
-              map.on('mouseenter', 'data-driven-circle', () => {
+              map.on('mouseenter', 'Data-driven circles,data-driven-circles', () => {
                   map.getCanvas().style.cursor = 'pointer';
               });
 
               // Change it back when it leaves
-              map.on('mouseleave', 'data-driven-circle', () => {
+              map.on('mouseleave', 'Data-driven circles,data-driven-circles', () => {
                   map.getCanvas().style.cursor = '';
               });
           });
