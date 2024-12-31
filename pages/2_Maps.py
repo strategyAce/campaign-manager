@@ -84,27 +84,53 @@ def main():
   <!DOCTYPE html>
   <html>
   <head>
-  <meta charset="utf-8">
-  <title>Display a map with click interaction</title>
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <link href="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css" rel="stylesheet">
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js"></script>
-  <style>
-  body { margin: 0; padding: 0; }
-  #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-  </style>
+    <meta charset="utf-8">
+    <title>Display a map with click interaction</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js"></script>
+    <style>
+      body { margin: 0; padding: 0; }
+      #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
   </head>
   <body>
-  <div id="map"></div>
-  <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYXNoMTgyNSIsImEiOiJjbTF2M3J5M3EwN3ZhMmpvZXI1MzRnbGIxIn0.Ahb-c79xp6uR9gEyGGWsgQ'; // Replace with your access token
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/ash1825/cm4663rzf00qt01s39jhmcrit', // Replace with your style URL
-        center: [-81.379234, 28.567760], // starting position
-        zoom: 11 // starting zoom
-    });
-  </script>
+    <div id="map"></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYXNoMTgyNSIsImEiOiJjbTF2M3J5M3EwN3ZhMmpvZXI1MzRnbGIxIn0.Ahb-c79xp6uR9gEyGGWsgQ'; // Replace with your access token
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/ash1825/cm4663rzf00qt01s39jhmcrit', // Replace with your style URL
+            center: [-81.379234, 28.567760], // starting position
+            zoom: 11 // starting zoom
+        });
+
+          map.on('load', () => {
+              // Add a click event for the existing data-driven-circles layer
+              map.on('click', 'data-driven-circles', (e) => {
+                  const coordinates = e.features[0].geometry.coordinates.slice();
+                  const properties = e.features[0].properties;
+
+                  new mapboxgl.Popup()
+                      .setLngLat(coordinates)
+                      .setHTML(
+                          `<h3>Precinct: ${properties['PRECINCT']}</h3>` +
+                          `<p>Democrat Percentage: ${properties['TOTAL REGISTERED']}</p>`
+                      )
+                      .addTo(map);
+              });
+
+              // Change the cursor to a pointer when over the layer
+              map.on('mouseenter', 'data-driven-circles', () => {
+                  map.getCanvas().style.cursor = 'pointer';
+              });
+
+              // Change it back when it leaves
+              map.on('mouseleave', 'data-driven-circles', () => {
+                  map.getCanvas().style.cursor = '';
+              });
+          });
+    </script>
   </body>
   </html>
   """
