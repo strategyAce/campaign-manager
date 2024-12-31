@@ -41,7 +41,7 @@ def main():
     with col3:
       st.metric(label="Total Number NPAs/Others", value="100")
     st.write("")
-    st.subheader("Win Number is blue[41,000]")
+    st.subheader("Win Number is :blue[41,000]")
     st.subheader("Voter Universe")
     if os.path.exists("voter_universe.csv"):
       voteruniverse = pd.read_csv("voter_universe.csv")
