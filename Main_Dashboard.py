@@ -41,13 +41,18 @@ def main():
     with col3:
       st.metric(label="Total Number NPAs/Others", value="100")
     st.write("")
-    st.subheader("Voter Universe")
-    if os.path.exists("voter_universe.csv"):
-      voteruniverse = pd.read_csv("voter_universe.csv")
-      df = pd.DataFrame(voteruniverse)
-      st.dataframe(df, hide_index=True)
-    else:
-      st.warning("No Voter Universe File Found")
+    col1,col2 = st.columns(2)
+    with col1:
+      st.subheader("Voter Universe")
+      if os.path.exists("voter_universe.csv"):
+        voteruniverse = pd.read_csv("voter_universe.csv")
+        df = pd.DataFrame(voteruniverse)
+        st.dataframe(df, hide_index=True)
+      else:
+        st.warning("No Voter Universe File Found")
+    with col2:
+      st.subheader("Win Number")
+      st.subheader("41,000")
     st.write("*Data updated on 12/22/2024*")
   
   st.image('Orlando_City_Map.png')
