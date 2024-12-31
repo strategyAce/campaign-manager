@@ -59,7 +59,7 @@ def main():
                       .setLngLat(coordinates)
                       .setHTML(
                           `<h3>Precinct: ${properties['PRECINCT']}</h3>` +
-                          `<p>Total Registered: ${properties['PCT-DEM']}</p>`
+                          `<p>Democrat %: ${properties['PCT-DEM']}</p>`
                       )
                       .addTo(map);
               });
@@ -115,7 +115,7 @@ def main():
                       .setLngLat(coordinates)
                       .setHTML(
                           `<h3>Precinct: ${properties['PRECINCT']}</h3>` +
-                          `<p>Democrat Percentage: ${properties['TOTAL REGISTERED']}</p>`
+                          `<p>Total Registered: ${properties['TOTAL REGISTERED']}</p>`
                       )
                       .addTo(map);
               });
