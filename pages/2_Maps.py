@@ -176,6 +176,8 @@ def main():
   
   fig.update_layout(mapbox_style="carto-positron")
   st.plotly_chart(fig)
+  st.write(gdf)
+  
   
   #App Footer
   st.divider()
