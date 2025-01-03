@@ -7,12 +7,12 @@ import os
 st.set_page_config(page_title="Manager App", page_icon=":ballot_box_with_ballot:")
 
 def main():
-  st.image("Eskamani_Banner.png",width=700)
+  st.image("resources/client/Eskamani_Banner.png",width=700)
   col1,col2 = st.columns(2)
   with col1:
     st.title("Orlando Mayoral Race")
   with col2:
-    st.image("Woman_User_Profile.png",width=150)
+    st.image("resources/client/Woman_User_Profile.png",width=150)
   
   # Input the future date (format: YYYY-MM-DD)
   future_date_str = "2027-11-02"
@@ -60,7 +60,7 @@ def main():
   
   #App Footer
   st.divider()
-  st.image("StratAceBanner_Logo.png",width=300)
+  st.image("resources/stratace/StratAceBanner_Logo.png",width=300)
   st.write("https://strategyace.win/")
 
 if __name__ == "__main__":
