@@ -83,7 +83,7 @@ def main():
     NPALow = NPAvalues[0]
     NPAHigh = NPAvalues[1]
 
-    if st.button("Run Simulation"):
+    if st.button("Run Simulation",color="Primary"):
         # Perform the Monte Carlo analysis
         election_results = monte_carlo_simulation(
             num_runs, DemLow, DemHigh, RepLow, RepHigh, NPALow, NPAHigh,
