@@ -58,6 +58,8 @@ def main():
           st.subheader(f"Here is the data for precinct :blue[{selPrecinct}]")
           demogData = precinctData[precinctData['PRECINCT'] == selPrecinct]
           st.write(demogData)
+          st.subheader("")
+          st.subheader("TO-DO: place map here")
 
    
     #Precinct Prioritizer Tab 
