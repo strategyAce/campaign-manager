@@ -31,12 +31,12 @@ def main():
         """)
         
     # Display the logo on the main page
-    st.image("Eskamani_Banner.png",width=700)
+    st.image("resources/client/Eskamani_Banner.png",width=700)
     col1,col2 = st.columns(2)
     with col1:
        st.title("Precinct Analysis Tool")
     with col2:
-       st.image("Campaign-Prioritizer_Logo.png",width=150)
+       st.image("resources/stratace/Campaign-Prioritizer_Logo.png",width=150)
     st.subheader("View key precinct data and create a priority list optimized for your campaign's strategy.")    
     st.divider()
 
@@ -156,7 +156,7 @@ def main():
 
     # App Footer
     st.divider()
-    st.image("StratAceBanner_Logo.png",width=300)
+    st.image("resources/stratace/StratAceBanner_Logo.png",width=300)
     st.write("https://strategyace.win/")
              
 if __name__ == "__main__":
