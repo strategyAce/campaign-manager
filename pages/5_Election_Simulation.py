@@ -4,7 +4,7 @@ import numpy as np
 from src.simulation import monte_carlo_simulation
 from src.visualization import plot_election_results
 
-st.set_page_config(page_title="Predictor", page_icon=":bar_chart:")
+st.set_page_config(page_title="Simulator", page_icon=":bar_chart:")
 
 
 def main():
@@ -12,7 +12,7 @@ def main():
     # Sidebar with expandable User Guide section
     with st.sidebar.title("📘 User Guide / Instructions"):
         st.sidebar.write("""
-        Welcome to the Campaign Predictor Tool!
+        Welcome to the Election Simulation Tool!
 
         **Tool Overview:**
         The tool was built to simulate different election outcomes for 2 partisan candidates running against each other. The tool uses party demographic statistics from your election district as well as turnout data. It then runs as many simulations as you set and randomly alters the input parameters to give you a wide range of outcomes.
