@@ -46,7 +46,7 @@ def main():
     if os.path.exists("voter_universe.csv"):
       voteruniverse = pd.read_csv("voter_universe.csv")
       df = pd.DataFrame(voteruniverse)
-      st.dataframe(df, hide_index=True, width=800, height=400)
+      st.dataframe(df, hide_index=True, width=800, height=200)
     else:
       st.warning("No Voter Universe File Found")
     st.markdown('''**Definitions**:\n\n **Hot**= Last 2 Gen & last 2 Prim\n\n **Warmer**= Last 2 Gen & last Prim\n\n **Warm**= Last 2 Gen\n\n **Infreq**= At least 1 vote in either last 2 Gen or 2 Prim
