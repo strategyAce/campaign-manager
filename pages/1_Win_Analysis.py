@@ -36,7 +36,8 @@ def main():
   votegoalH = np.ceil(PredVoters*((50+buffer[1])/100))
   st.subheader(f"Your vote goal range with the added buffer comes to:")
   st.title(f"{votegoalL} - {votegoalH}")
-  
+  st.subheader("")
+  st.subheader("")
   
   # App Footer
   st.divider()
