@@ -24,12 +24,12 @@ def main():
   st.write("")
   st.subheader(f":blue[{days_until}] days until Election Day on 11/02/2027 !")
   st.subheader("")
-  st.subheader("Your Campaign Win Number is  :blue[41,000] votes.")
 
   #Campaign Map
   st.image('resources/client/Orlando_City_Map.png')
 
   #Dashboard Values
+  #Electorate Container
   with st.container(border=True):
     st.subheader("Electorate Overview")
     col1,col2 = st.columns(2)
@@ -46,6 +46,8 @@ def main():
       st.metric(label="Total Number NPAs/Others", value="100")
     st.write("")
     st.write(":green[*Data updated on 12/22/2024*]")
+    
+  #Voter Universe Container
   with st.container(border=True):
     st.subheader("Your Voter Universe")
     if os.path.exists("voter_universe.csv"):
@@ -54,6 +56,8 @@ def main():
       st.dataframe(df, hide_index=True, width=800)
     else:
       st.warning("No Voter Universe File Found")
+    st.write("")
+    st.subheader("Your Campaign Win Number is  :blue[41,000] votes.")
     st.markdown('''**Definitions**:\n\n **Hot**= Last 2 Gen & last 2 Prim....**Warmer**= Last 2 Gen & last Prim\n\n **Warm**= Last 2 Gen....**Infreq**= At least 1 vote in either last 2 Gen or 2 Prim
                 ''')
     st.write(":green[*Data updated on 12/22/2024*]")
