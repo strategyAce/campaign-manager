@@ -58,7 +58,7 @@ def main():
                 ''')
     st.write(":green[*Data updated on 12/22/2024*]")
   
-  
+  st.empty()
   #App Footer
   st.divider()
   st.image("resources/stratace/StratAceBanner_Logo.png",width=300)
