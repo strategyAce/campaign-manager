@@ -45,7 +45,7 @@ def main():
     st.divider()
 
     # Setup Page Tabs
-    tab1, tab2 = st.tabs(["Pricinct Explorer", "Pricinct Prioritizer"])
+    tab1, tab2 = st.tabs(["🔍Pricinct Explorer", "🔃 Pricinct Prioritizer"])
    
     #Precinct Explorer Tab
     with tab1:
