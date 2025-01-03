@@ -367,12 +367,14 @@ def election_runup_report(df):
 
 # Main application
 def main():
-    st.image("Eskamani_Banner.png",width=700)
+    
+    #App Header
+    st.image("resources/client/Eskamani_Banner.png",width=700)
     col1, col2 = st.columns(2)
     with col1:
         st.title("Campaign Reporter Tool")
     with col2:
-        st.image("Campaign-Reporter_Logo.png",width=150)
+        st.image("resources/stratace/Campaign-Reporter_Logo.png",width=150)
     st.subheader("Review and generate tailored campaign reports")
     st.divider()
 
@@ -403,7 +405,7 @@ def main():
 
     #App Footer
     st.divider()
-    st.image("StratAceBanner_Logo.png",width=300)
+    st.image("resources/stratace/StratAceBanner_Logo.png",width=300)
     st.write("https://strategyace.win/")
 
 if __name__ == "__main__":
