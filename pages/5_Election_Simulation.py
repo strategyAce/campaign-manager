@@ -52,13 +52,13 @@ def main():
     election_results = None
 
     # Input Collection
-    st.write("Enter Fixed Simulation Variables")
+    st.write("**Enter Fixed Simulation Variables**")
     num_runs = st.slider("Enter Number of Runs", 0, 2000, 1000,step=50)
     RegDems = st.number_input("Enter Number of Registered Democrats (fixed variable)", min_value=0, value=0, step=1)
     RegReps = st.number_input("Enter Number of Registered Republicans (fixed variable)", min_value=0, value=0, step=1)
     RegNPAs = st.number_input("Enter Number of Registered NPAs/Others (fixed variable)", min_value=0, value=0, step=1)
     st.divider()
-    st.write("Enter Normal Distribution Monte Carlo Variables")
+    st.write("**Enter Normal Distribution Monte Carlo Variables**")
     # Create two columns
     col1, col2 = st.columns(2)
     # Add content to the first column
@@ -72,7 +72,7 @@ def main():
         RepStd = st.number_input("Enter standard deviation of Republican turnout %", min_value=0.00, value=1.00, step=1.00)
         NPAStd = st.number_input("Enter standard deviation of NPA/Other turnout %", min_value=0.00, value=1.00, step=1.00)
     st.divider()
-    st.write("Enter Uniform Distribution Monte Carlo Variables")
+    st.write("**Enter Uniform Distribution Monte Carlo Variables**")
     Demvalues = st.slider("Enter the lower and upper % values of Democrats that vote for your candidate",0,100,(25,75))
     DemLow = Demvalues[0]
     DemHigh = Demvalues[1]
