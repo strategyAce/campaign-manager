@@ -41,19 +41,17 @@ def main():
     st.subheader("View key precinct data and create a priority list optimized for your campaign's strategy.")    
     st.divider()
 
-    # Setup Tabs
+    # Setup Page Tabs
     tab1, tab2 = st.tabs(["Pricinct Explorer", "Pricinct Prioritizer"])
     with tab1:
        st.subheader("Select a precinct and explore its data")
        st.write("")
-       selPrecinct = st.selectbox("select a precinct from the following list",precinctList,help="don't see the precinct you are looking for...? Contact your data team to have it added.")
+       selPrecinct = st.selectbox("Select a precinct from the following list",precinctList,index=None,help="Don't see the precinct you are looking for...? Contact your data team to have it added.")
+       #if selPrecinct != None:
+          #add code to display precinct data here from csv file          
+          
        
     with tab2:
-       # Dropdown for selecting the political party
-       #st.header("Select the Party to optimize for")
-       #party_choice = st.selectbox("Select Political Party for Favorability Score", ["Democrat","Republican", "NPA"])
-       #st.divider()
-   
        st.header("Set Weights to Match Your Campaign's Strategy")
        st.write("Use the sliders below to adjust each parameter weight. Please note that the total for all weights needs to equal 1.0.")
        # Inputs for weights
