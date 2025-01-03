@@ -5,7 +5,7 @@ import plotly.express as px
 import os
 
 st.set_page_config(layout="wide",page_title="Visualizer", page_icon=":globe_with_meridians:")
-JSON_PATH = "SD6_Election_Point_11082024.geojson"
+JSON_PATH = "data/SD6_Election_Point_11082024.geojson"
 
 def main():
 
