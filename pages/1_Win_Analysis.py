@@ -22,7 +22,7 @@ def main():
   winNum = (PredVoters*0.5)+1
 
   st.subheader("The historical average percentage turnout for Orlando Mayoral race:")
-  st.title(f":blue[{AvgTurnout}] %")
+  st.title(f":blue[{AvgTurnout} %]")
   st.write("")
   st.subheader(f"The total number of registered voters as of {Date} book closing:")
   st.title(f":blue[{TotReg}]")
@@ -35,7 +35,7 @@ def main():
   votegoalL = np.ceil(PredVoters*((50+buffer[0])/100))
   votegoalH = np.ceil(PredVoters*((50+buffer[1])/100))
   st.subheader(f"Your vote goal range with the added buffer comes to:")
-  st.title(f":blue[{votegoalL}] - :blue[{votegoalH}]")
+  st.title(f":blue[{votegoalL} - {votegoalH}]")
   st.subheader("")
   st.subheader("")
   
