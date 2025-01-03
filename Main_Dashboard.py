@@ -66,7 +66,7 @@ def main():
     else:
       st.subheader("Navigate to the Win Analysis page to calculate your campaign's win #!")
     if os.path.exists("data/voter_universe.csv"):
-      voteruniverse = pd.read_csv("voter_universe.csv")
+      voteruniverse = pd.read_csv("data/voter_universe.csv")
       df = pd.DataFrame(voteruniverse)
       st.dataframe(df, hide_index=True, width=800)
     else:
