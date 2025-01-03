@@ -45,7 +45,7 @@ def main():
         st.title("Election Simulation Tool")
     with col2:
         st.image("Campaign-Predictor.png",width=150)
-    st.subheader("Run predictions that can give your campaign winning insight")
+    st.subheader("Run simulations that can give your campaign winning insight")
     st.divider()
 
     # Initialize election_results to None
