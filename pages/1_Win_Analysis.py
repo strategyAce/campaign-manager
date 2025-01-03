@@ -15,7 +15,7 @@ def main():
   #Read in Data
   AvgTurnout = 33.3
   TotReg = 112000
-  Date = 01/2025
+  Date = "01/2025"
 
   #Calculated Values
   PredVoters = np.ceil((AvgTurnout/100)*TotReg)
