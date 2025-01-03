@@ -129,6 +129,7 @@ def main():
             st.pyplot(fig)
 
     # App Footer
+    st.subheader("")
     st.divider()
     st.image("resources/stratace/StratAceBanner_Logo.png",width=300)
     st.write("https://strategyace.win/")
