@@ -61,7 +61,6 @@ def main():
   with st.container(border=True):
     st.subheader("Your Voter Universe")
     st.write("")
-    st.write(f"Test: {winNum}")
     if winNum != None:
       st.subheader("Your Campaign Win Number is  :blue[41,000] votes.")
     else:
