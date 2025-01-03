@@ -176,7 +176,7 @@ def main():
   
   fig.update_layout(mapbox_style="carto-positron")
   st.plotly_chart(fig)
-  feature_count = len(gdf['features'])
+  feature_count = len(gdf['PRECINCT'])
   st.write(f"Number of features: {feature_count}")
   
   
