@@ -28,7 +28,7 @@ def main():
 
   #Dashboard Values
   with st.container(border=True):
-    st.subheader("Campaign Overview")
+    st.subheader("Electorate Overview")
     col1,col2 = st.columns(2)
     with col1:
       st.metric(label="Total Number of County Precincts", value="100")
@@ -42,6 +42,8 @@ def main():
     with col3:
       st.metric(label="Total Number NPAs/Others", value="100")
     st.write("")
+    st.write(":green[*Data updated on 12/22/2024*]")
+  with st.container(border=True):
     st.subheader("Your Voter Universe")
     if os.path.exists("voter_universe.csv"):
       voteruniverse = pd.read_csv("voter_universe.csv")
