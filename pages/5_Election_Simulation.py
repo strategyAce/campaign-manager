@@ -42,7 +42,7 @@ def main():
     st.image("Eskamani_Banner.png",width=700)
     col1,col2 = st.columns(2)
     with col1:
-        st.title("Campaign Win Analysis Tool")
+        st.title("Election Simulation Tool")
     with col2:
         st.image("Campaign-Predictor.png",width=150)
     st.subheader("Run predictions that can give your campaign winning insight")
