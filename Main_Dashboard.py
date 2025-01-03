@@ -26,6 +26,9 @@ def main():
   st.subheader("")
   st.subheader("Your Campaign Win Number is  :blue[41,000] votes.")
 
+  #Campaign Map
+  st.image('resources/client/Orlando_City_Map.png')
+
   #Dashboard Values
   with st.container(border=True):
     st.subheader("Electorate Overview")
@@ -55,8 +58,6 @@ def main():
                 ''')
     st.write(":green[*Data updated on 12/22/2024*]")
   
-  #Campaign Map
-  st.image('Orlando_City_Map.png')
   
   #App Footer
   st.divider()
