@@ -39,12 +39,12 @@ def main():
         """)
         
     # App Header
-    st.image("Eskamani_Banner.png",width=700)
+    st.image("resources/client/Eskamani_Banner.png",width=700)
     col1,col2 = st.columns(2)
     with col1:
         st.title("Election Simulation Tool")
     with col2:
-        st.image("Campaign-Predictor.png",width=150)
+        st.image("resources/stratace/Campaign-Predictor.png",width=150)
     st.subheader("Run simulations that can give your campaign winning insight")
     st.divider()
 
@@ -130,7 +130,7 @@ def main():
 
     # App Footer
     st.divider()
-    st.image("StratAceBanner_Logo.png",width=300)
+    st.image("resources/stratace/StratAceBanner_Logo.png",width=300)
     st.write("https://strategyace.win/")
 
 if __name__ == "__main__":
