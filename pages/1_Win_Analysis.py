@@ -33,7 +33,7 @@ def main():
   st.title(f":blue[{winNum}]")
   st.write("*Win # = (Predicted # of Voters * 50%) + 1*")
   st.write("")
-  st.write("")
+  st.subheader("Now lets calculate your vote goals with some buffer added:")
   buffer = st.slider("Select the percentage buffer you would like to add", 0.0,10.0,(2.0,5.0),step=1.0,help="These percentages are added to the Win # to provide a target goal range of votes your campaign hopes to achieve. Feel free to play with the sliders to see how the number of votes changes.")
   votegoalL = np.ceil(winNum*(1+(buffer[0]/100)))
   votegoalH = np.ceil(winNum*(1+(buffer[1]/100)))
