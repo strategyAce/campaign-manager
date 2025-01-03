@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import json
 from sklearn.preprocessing import MinMaxScaler
 import os
 
@@ -48,6 +49,11 @@ def main():
        st.write("")
        selPrecinct = st.selectbox("Select a precinct from the following list",precinctList,index=None,help="Don't see the precinct you are looking for...? Contact your data team to have it added.")
        #if selPrecinct != None:
+         jsonData = json.loads('data/SD06_Election_Point_11082024.geojson')
+         # Count the features
+         feature_count = len(jsonData['features'])
+         st.write(f"Number of features: {feature_count}")
+
           #add code to display precinct data here from csv file          
           
        
