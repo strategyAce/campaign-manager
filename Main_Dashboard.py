@@ -6,7 +6,17 @@ import os
 
 st.set_page_config(page_title="Manager App", page_icon=":ballot_box_with_ballot:")
 
+#Initialize Session State
+if 'shared_data' not in st.session_state:
+    st.session_state['shared_data'] = {}
+
+#Retrieve Session State Data
+if 'shared_data' in st.session_state:
+    winNum = st.session_state['shared_data'].get('page1')
+
 def main():
+  
+  #App Header
   st.image("resources/client/Eskamani_Banner.png",width=700)
   col1,col2 = st.columns(2)
   with col1:
@@ -50,20 +60,25 @@ def main():
   #Voter Universe Container
   with st.container(border=True):
     st.subheader("Your Voter Universe")
+    st.write("")
+    st.write(f"Test: {winNum}")
+    if winNum != None:
+      st.subheader("Your Campaign Win Number is  :blue[41,000] votes.")
+    else:
+      st.subheader("Navigate to the Win Analysis page to calculate your campaign's win #!")
     if os.path.exists("voter_universe.csv"):
       voteruniverse = pd.read_csv("voter_universe.csv")
       df = pd.DataFrame(voteruniverse)
       st.dataframe(df, hide_index=True, width=800)
     else:
       st.warning("No Voter Universe File Found")
-    st.write("")
-    st.subheader("Your Campaign Win Number is  :blue[41,000] votes.")
     st.markdown('''**Definitions**:\n\n **Hot**= Last 2 Gen & last 2 Prim....**Warmer**= Last 2 Gen & last Prim\n\n **Warm**= Last 2 Gen....**Infreq**= At least 1 vote in either last 2 Gen or 2 Prim
                 ''')
     st.write(":green[*Data updated on 12/22/2024*]")
   
-  st.title("")
+  
   #App Footer
+  st.subheader("")
   st.divider()
   st.image("resources/stratace/StratAceBanner_Logo.png",width=300)
   st.write("https://strategyace.win/")
