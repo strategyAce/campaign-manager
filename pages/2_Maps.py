@@ -9,12 +9,12 @@ JSON_PATH = "SD6_Election_Point_11082024.geojson"
 
 def main():
 
-  st.image("Eskamani_Banner.png",width=700)
+  st.image("resources/client/Eskamani_Banner.png",width=700)
   col1,col2 = st.columns(2)
   with col1:
     st.title("Campaign Visualizer Tool")
   with col2:
-    st.image("Campaign-Visualizer_Logo.png",width=150)
+    st.image("resources/stratace/Campaign-Visualizer_Logo.png",width=150)
   st.subheader("Map your campaign data to chart your path to victory.")
   st.divider()
   
@@ -179,7 +179,7 @@ def main():
   
   #App Footer
   st.divider()
-  st.image("StratAceBanner_Logo.png",width=300)
+  st.image("resources/stratace/StratAceBanner_Logo.png",width=300)
   st.write("https://strategyace.win/")
 
 if __name__ == "__main__":
