@@ -57,7 +57,7 @@ def main():
           st.subheader("")
           st.subheader(f"Here is the data for precinct :blue[{selPrecinct}]")
           demogData = precinctData[precinctData['PRECINCT'] == selPrecinct]
-          st.dataframe(demogData)
+          st.write(demogData)
 
    
     #Precinct Prioritizer Tab 
