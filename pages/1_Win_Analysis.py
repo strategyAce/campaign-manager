@@ -31,7 +31,7 @@ def main():
   st.title(f"{winNum}")
   st.write("")
   st.write("")
-  buffer = st.select_slider("Select the percentage buffer you would like to add", 0.0,5.0,(2.0,3.0))
+  buffer = st.slider("Select the percentage buffer you would like to add", 0.0,5.0,(2.0,3.0))
   votegoalL = PredVoters*((50+buffer[0])/100)
   votegoalH = PredVoters*((50+buffer[1])/100)
   st.subheader(f"Your vote goal range with the added buffer comes to:")
