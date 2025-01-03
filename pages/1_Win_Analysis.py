@@ -22,7 +22,7 @@ def main():
   winNum = PredVoters+1
 
   st.subheader("The historical average percentage turnout for Orlando Mayoral race:")
-  st.title(f"{AvgTurnout}")
+  st.title(f"{AvgTurnout} %")
   st.write("")
   st.subheader(f"The total number of registered voters as of {Date} book closing:")
   st.title(f"{TotReg}")
