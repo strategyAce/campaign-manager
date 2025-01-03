@@ -7,7 +7,7 @@ st.set_page_config(page_title="Win Analysis", page_icon=":arrows_clockwise:")
 def main():
 
   #App Header
-  st.image("Eskamani_Banner.png",width=700)
+  st.image("resources/client/Eskamani_Banner.png",width=700)
   st.title("Campaign Win Analysis")
   st.subheader("Easily calculate and keep track of your campaign's win number.")    
   st.divider()
@@ -46,7 +46,7 @@ def main():
   st.empty()
   # App Footer
   st.divider()
-  st.image("StratAceBanner_Logo.png",width=300)
+  st.image("resources/stratace/StratAceBanner_Logo.png",width=300)
   st.write("https://strategyace.win/")
 
 if __name__ == "__main__":
