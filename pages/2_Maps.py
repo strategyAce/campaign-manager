@@ -176,10 +176,10 @@ def main():
   
   fig.update_layout(mapbox_style="carto-positron")
   st.plotly_chart(fig)
-  #write to session state shared variables
-  precinct_count = len(gdf['PRECINCT'])
-  st.write(gdf)
   
+  #write to session state shared variables
+  st.session_state['shared_data']['page2'] = gdf
+
   
   #App Footer
   st.divider()
