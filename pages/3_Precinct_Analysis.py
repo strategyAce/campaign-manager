@@ -6,7 +6,9 @@ from sklearn.preprocessing import MinMaxScaler
 import os
 
 st.set_page_config(page_title="Prioritizer", page_icon=":arrows_clockwise:")
-precinctList = ["100","101","102","103","104","204","205","206","207"]
+
+#Read in Precinct Data from Session State from Maps Page
+precinctData = st.session_state['shared_data'].get('page2')
 
 # Streamlit app
 def main():
@@ -44,19 +46,21 @@ def main():
 
     # Setup Page Tabs
     tab1, tab2 = st.tabs(["Pricinct Explorer", "Pricinct Prioritizer"])
+   
+    #Precinct Explorer Tab
     with tab1:
        st.subheader("Select a precinct and explore its data")
        st.write("")
+       precinctList =  precinctData['PRECINCT']
        selPrecinct = st.selectbox("Select a precinct from the following list",precinctList,index=None,help="Don't see the precinct you are looking for...? Contact your data team to have it added.")
-       #if selPrecinct != None:
-       jsonData = json.loads('data/SD06_Election_Point_11082024.geojson')
-       # Count the features
-       feature_count = len(jsonData['features'])
-       st.write(f"Number of features: {feature_count}")
+       if selPrecinct != None:
+          st.subheader("")
+          st.subheader(f"Here is the data for precinct :blue[{selPrecinct}]")
+          demogData = precinctData[precinctData['PRECINCT'] == selPrecinct]
+          st.write(demogData)
 
-       #add code to display precinct data here from csv file          
-          
-       
+   
+    #Precinct Prioritizer Tab 
     with tab2:
        st.header("Set Weights to Match Your Campaign's Strategy")
        st.write("Use the sliders below to adjust each parameter weight. Please note that the total for all weights needs to equal 1.0.")
