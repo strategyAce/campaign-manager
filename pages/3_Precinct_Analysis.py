@@ -66,7 +66,7 @@ def main():
           st.subheader("")
 
           #Map script from mapbox
-          map_script = """
+          map_script = f"""
            <!DOCTYPE html>
            <html>
            <head>
