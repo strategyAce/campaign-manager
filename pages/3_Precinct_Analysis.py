@@ -85,10 +85,9 @@ def main():
                         container: 'map',
                         style: 'https://api.mapbox.com/styles/v1/ash1825/cm5hfbzgp002601qfezaz6ixn',
                         center: [{long}, {lat}],
-                        zoom: 14
+                        zoom: 11
                     }});
 
-                    
                 </script>
            </body>
            </html>
