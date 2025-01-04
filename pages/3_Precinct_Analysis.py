@@ -93,7 +93,7 @@ def main():
            </html>
            """
           st.subheader("TO-DO: place map here")
-          st.components.v1.html(map_script, width=1000, height=600)
+          st.components.v1.html(map_script, width=400, height=400)
 
 
    
