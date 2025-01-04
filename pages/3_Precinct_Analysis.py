@@ -61,6 +61,8 @@ def main():
           lat = float(demogData['LATITUDE'])
           long = float(demogData['LONGITUDE'])
           st.write(demogData)
+          st.write(lat)
+          st.write(long)
           st.subheader("")
 
           #Map script from mapbox
