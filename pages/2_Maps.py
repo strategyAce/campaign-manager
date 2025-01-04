@@ -5,7 +5,10 @@ import plotly.express as px
 import os
 
 st.set_page_config(layout="wide",page_title="Visualizer", page_icon=":globe_with_meridians:")
-JSON_PATH = "data/SD6_Election_Point_11082024.geojson"
+
+#Retrieve Session State Data
+if 'shared_data' in st.session_state:
+    electionDF = st.session_state['shared_data'].get('electionDF')
 
 def main():
 
@@ -157,9 +160,8 @@ def main():
   
   st.subheader("2024 Election Performance")
   st.write("The map belows shows how well your candidate did relative to expected performance based on party demographics. Red circles indicate under-performance while blue indicates above-performance.")
-  gdf = gpd.read_file(JSON_PATH)  #geoJSON file of election results
   fig = px.scatter_mapbox(
-    gdf,
+    electionDF,
     lat="LATITUDE",
     lon="LONGITUDE",
     color="Performance",
