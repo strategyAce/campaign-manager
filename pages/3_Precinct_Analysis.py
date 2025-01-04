@@ -59,8 +59,7 @@ def main():
           demogData = precinctData[precinctData['PRECINCT'] == selPrecinct]
           lat = demogData['LATITUDE']
           long = demogData['LONGITUDE']
-          st.write(lat)
-          st.write(long)
+          st.write(demogData)
           st.subheader("")
 
           #Map script from mapbox
@@ -88,12 +87,14 @@ def main():
                         center: [{long}, {lat}],
                         zoom: 14
                     }});
+
+                    
                 </script>
            </body>
            </html>
            """
           st.subheader("TO-DO: place map here")
-          st.components.v1.html(map_script, height=600)
+          st.components.v1.html(map_script, width=1000, height=600))
 
 
    
