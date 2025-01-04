@@ -9,6 +9,7 @@ st.set_page_config(page_title="Prioritizer", page_icon=":arrows_clockwise:")
 
 #Read in Precinct Data from Session State from Maps Page
 precinctData = st.session_state['shared_data'].get('page2')
+st.session_state.selected_coords = {}
 
 # Streamlit app
 def main():
@@ -59,6 +60,7 @@ def main():
           demogData = precinctData[precinctData['PRECINCT'] == selPrecinct]
           lat = demogData['LATITUDE']
           long = demogData['LONGITUDE']
+          st.session_state.selected_coords = {"lat": lat, "lng": long}
           st.write(demogData)
           st.subheader("")
 
@@ -84,7 +86,7 @@ def main():
                     const map = new mapboxgl.Map({{
                         container: 'map',
                         style: 'mapbox://styles/ash1825/cm5hfbzgp002601qfezaz6ixn',
-                        center: [{long}, {lat}],
+                        center: [{selected_coords["lng"]}, {selected_coords["lat"]}],
                         zoom: 11
                     }});
 
