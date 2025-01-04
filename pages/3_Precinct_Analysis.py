@@ -61,8 +61,6 @@ def main():
           lat = demogData['LATITUDE'].values[0]
           long = demogData['LONGITUDE'].values[0]
           st.write(demogData)
-          st.write(lat)
-          st.write(long)
           st.subheader("")
 
           #Map script from mapbox
