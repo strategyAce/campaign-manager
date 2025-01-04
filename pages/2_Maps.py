@@ -166,7 +166,7 @@ def main():
     lon="LONGITUDE",
     color="Performance",
     color_continuous_scale="RdBu",  # Use a diverging color scale for positive and negative values
-    size=abs(gdf["Performance"]),  # Size the markers based on performance
+    size=abs(electionDF["Performance"]),  # Size the markers based on performance
     hover_name="PRECINCT",  # Show precinct name on hover
     hover_data=["Performance"],  # Show performance value on hover
     mapbox_style="carto-positron",
