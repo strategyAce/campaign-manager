@@ -21,7 +21,7 @@ def main():
   PredVoters = np.ceil((AvgTurnout/100)*TotReg)
   winNum = int((PredVoters*0.5)+1)
   #write to session state
-  st.session_state['shared_data']['page1'] = winNum
+  st.session_state['shared_data']['winNum'] = winNum
 
   #Report to user
   st.subheader("The historical average percentage turnout for Orlando Mayoral race:")
