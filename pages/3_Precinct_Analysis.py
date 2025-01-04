@@ -58,10 +58,12 @@ def main():
           st.subheader("")
           st.subheader(f"Here is the data for precinct :blue[{selPrecinct}]")
           demogData = precinctData[precinctData['PRECINCT'] == selPrecinct]
-          lat = demogData['LATITUDE']
-          long = demogData['LONGITUDE']
           st.write(demogData)
           st.subheader("")
+          
+          #Capture scalar values of lat and long coordinates for mapping
+          lat = demogData['LATITUDE'].values[0]
+          long = demogData['LONGITUDE'].values[0]
 
           #Map script from mapbox
           map_script = f"""
@@ -93,9 +95,10 @@ def main():
            </body>
            </html>
            """
+          
+          #Display Map
           st.subheader("")
           st.components.v1.html(map_script, width=500, height=500)
-
 
    
     #Precinct Prioritizer Tab 
