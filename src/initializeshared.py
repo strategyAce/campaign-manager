@@ -1,5 +1,6 @@
 import streamlit as st
 import geopandas as gpd
+import pandas as pd
 
 ELECTRES_PATH = "data/SD6_Election_Point_11082024.geojson"
 VOTERUNI_PATH = "data/voter_universe.csv"
