@@ -59,10 +59,10 @@ def main():
           demogData = precinctData[precinctData['PRECINCT'] == selPrecinct]
           lat = demogData['LATITUDE']
           long = demogData['LONGITUDE']
-          st.write(demogData)
+          st.write(lat)
+          st.write(long)
           st.subheader("")
-          # Pass selected precinct data to the HTML via a Streamlit event
-          st.session_state.selected_coords = selected_coords
+
           #Map script from mapbox
           map_script = """
            <!DOCTYPE html>
