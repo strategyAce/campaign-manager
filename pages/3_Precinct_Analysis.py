@@ -58,9 +58,8 @@ def main():
           st.subheader("")
           st.subheader(f"Here is the data for precinct :blue[{selPrecinct}]")
           demogData = precinctData[precinctData['PRECINCT'] == selPrecinct]
-          lat = demogData['LATITUDE']
-          long = demogData['LONGITUDE']
-          st.session_state.selected_coords = {"lat": lat, "lng": long}
+          lat = float(demogData['LATITUDE'])
+          long = float(demogData['LONGITUDE'])
           st.write(demogData)
           st.subheader("")
 
