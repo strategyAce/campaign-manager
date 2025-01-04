@@ -88,15 +88,15 @@ def main():
                         container: 'map',
                         style: 'mapbox://styles/ash1825/cm5hfbzgp002601qfezaz6ixn',
                         center: [{long}, {lat}],
-                        zoom: 11
+                        zoom: 13
                     }});
 
                 </script>
            </body>
            </html>
            """
-          st.subheader("TO-DO: place map here")
-          st.components.v1.html(map_script, width=700, height=600)
+          st.subheader("")
+          st.components.v1.html(map_script, width=500, height=500)
 
 
    
