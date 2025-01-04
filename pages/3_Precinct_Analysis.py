@@ -64,7 +64,7 @@ def main():
           # Pass selected precinct data to the HTML via a Streamlit event
           st.session_state.selected_coords = selected_coords
           #Map script from mapbox
-           map_script = """
+          map_script = """
            <!DOCTYPE html>
            <html>
            <head>
