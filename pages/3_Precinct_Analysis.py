@@ -86,16 +86,7 @@ def main():
                         container: 'map',
                         style: 'https://api.mapbox.com/styles/v1/ash1825/cm5hfbzgp002601qfezaz6ixn',
                         center: [{long}, {lat}],
-                        zoom: 11
-                    }});
-            
-                    window.addEventListener('message', (event) => {{
-                        if (event.data && event.data.lat && event.data.lng) {{
-                            map.flyTo({{
-                                center: [event.data.lng, event.data.lat],
-                                zoom: 14
-                            }});
-                        }}
+                        zoom: 14
                     }});
                 </script>
            </body>
