@@ -68,7 +68,7 @@ def main():
       st.dataframe(voterUniDF, hide_index=True, width=800)
     else:
       st.warning("No Voter Universe File Found")
-    st.markdown('''**Definitions**:\n\n **Hot**= Last 2 Gen & last 2 Prim....**Warmer**= Last 2 Gen & last Prim\n\n **Warm**= Last 2 Gen....**Infreq**= At least 1 vote in either last 2 Gen or 2 Prim
+      st.markdown('''**Definitions**:\n\n **Hot**= Last 2 Gen & last 2 Prim....**Warmer**= Last 2 Gen & last Prim\n\n **Warm**= Last 2 Gen....**Infreq**= At least 1 vote in either last 2 Gen or 2 Prim
                 ''')
     st.write(":green[*Data updated on 12/22/2024*]")
   
