@@ -57,9 +57,53 @@ def main():
           st.subheader("")
           st.subheader(f"Here is the data for precinct :blue[{selPrecinct}]")
           demogData = precinctData[precinctData['PRECINCT'] == selPrecinct]
+          lat = demogData['LATITUDE']
+          long = demogData['LONGITUDE']
           st.write(demogData)
           st.subheader("")
+          # Pass selected precinct data to the HTML via a Streamlit event
+          st.session_state.selected_coords = selected_coords
+          #Map script from mapbox
+           map_script = """
+           <!DOCTYPE html>
+           <html>
+           <head>
+               <meta charset="utf-8">
+               <title>Display a map with click interaction</title>
+               <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+               <link href="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css" rel="stylesheet">
+               <script src="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js"></script>
+               <style>
+                   body { margin: 0; padding: 0; }
+                   #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+               </style>
+           </head>
+           <body>
+               <div id="map"></div>
+                <script>
+                    mapboxgl.accessToken = 'pk.eyJ1IjoiYXNoMTgyNSIsImEiOiJjbTF2M3J5M3EwN3ZhMmpvZXI1MzRnbGIxIn0.Ahb-c79xp6uR9gEyGGWsgQ'; 
+                    const map = new mapboxgl.Map({{
+                        container: 'map',
+                        style: 'https://api.mapbox.com/styles/v1/ash1825/cm5hfbzgp002601qfezaz6ixn',
+                        center: [{long}, {lat}],
+                        zoom: 11
+                    }});
+            
+                    window.addEventListener('message', (event) => {{
+                        if (event.data && event.data.lat && event.data.lng) {{
+                            map.flyTo({{
+                                center: [event.data.lng, event.data.lat],
+                                zoom: 14
+                            }});
+                        }}
+                    }});
+                </script>
+           </body>
+           </html>
+           """
           st.subheader("TO-DO: place map here")
+          st.components.v1.html(map_script, height=600)
+
 
    
     #Precinct Prioritizer Tab 
