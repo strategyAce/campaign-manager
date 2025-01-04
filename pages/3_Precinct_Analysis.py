@@ -8,7 +8,7 @@ import os
 st.set_page_config(page_title="Prioritizer", page_icon=":arrows_clockwise:")
 
 #Read in Precinct Data from Session State from Maps Page
-precinctData = st.session_state['shared_data'].get('page2')
+electionDF = st.session_state['shared_data'].get('electionDF')
 
 # Streamlit app
 def main():
@@ -34,7 +34,7 @@ def main():
         - Its helpful to revisit at different parts of your campaign as factors and strategy may change.
         """)
         
-    # Display the logo on the main page
+    # App Header
     st.image("resources/client/Eskamani_Banner.png",width=700)
     col1,col2 = st.columns(2)
     with col1:
@@ -51,12 +51,12 @@ def main():
     with tab1:
        st.subheader("Select a precinct and explore its data")
        st.write("")
-       precinctList =  precinctData['PRECINCT']
+       precinctList =  electionDF['PRECINCT']
        selPrecinct = st.selectbox("Select a precinct from the following list",precinctList,index=None,help="Don't see the precinct you are looking for...? Contact your data team to have it added.")
        if selPrecinct != None:
           st.subheader("")
           st.subheader(f"Here is the data for precinct :blue[{selPrecinct}]")
-          demogData = precinctData[precinctData['PRECINCT'] == selPrecinct]
+          demogData = electionDF[electionDF['PRECINCT'] == selPrecinct]
           st.write(demogData)
           st.subheader("")
           
