@@ -9,7 +9,6 @@ st.set_page_config(page_title="Prioritizer", page_icon=":arrows_clockwise:")
 
 #Read in Precinct Data from Session State from Maps Page
 precinctData = st.session_state['shared_data'].get('page2')
-st.session_state.selected_coords = {}
 
 # Streamlit app
 def main():
