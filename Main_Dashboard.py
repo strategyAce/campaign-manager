@@ -6,9 +6,8 @@ import os
 
 st.set_page_config(page_title="Manager App", page_icon=":ballot_box_with_ballot:")
 
-#Initialize Session State
-if 'shared_data' not in st.session_state:
-    st.session_state['shared_data'] = {}
+#initialize shared session state data
+initialize_shared()
 
 #Retrieve Session State Data
 if 'shared_data' in st.session_state:
