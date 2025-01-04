@@ -86,7 +86,7 @@ def main():
                     const map = new mapboxgl.Map({{
                         container: 'map',
                         style: 'mapbox://styles/ash1825/cm5hfbzgp002601qfezaz6ixn',
-                        center: [{selected_coords["lng"]}, {selected_coords["lat"]}],
+                        center: [{long}, {lat}],
                         zoom: 11
                     }});
 
