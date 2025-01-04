@@ -83,7 +83,7 @@ def main():
                     mapboxgl.accessToken = 'pk.eyJ1IjoiYXNoMTgyNSIsImEiOiJjbTF2M3J5M3EwN3ZhMmpvZXI1MzRnbGIxIn0.Ahb-c79xp6uR9gEyGGWsgQ'; 
                     const map = new mapboxgl.Map({{
                         container: 'map',
-                        style: 'https://api.mapbox.com/styles/v1/ash1825/cm5hfbzgp002601qfezaz6ixn',
+                        style: 'mapbox://styles/ash1825/cm5hfbzgp002601qfezaz6ixn',
                         center: [{long}, {lat}],
                         zoom: 11
                     }});
