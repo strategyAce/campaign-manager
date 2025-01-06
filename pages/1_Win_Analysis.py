@@ -10,7 +10,9 @@ def main():
   with st.sidebar.title("📘 User Guide / Instructions"):
     st.sidebar.write("""
     **Overview:**
-       This webpage will help your campaign calculate your win number and vote goals/targets. The page itself is smart and uses historical data curated by Strategy Ace to save you time and to make sure your team is up-to-date as registrations change over time")
+       This webpage will help your campaign calculate your win number and vote goals/targets. 
+       
+       The page itself is smart and uses historical data curated by Strategy Ace to save you time and to make sure your team is up-to-date as registrations change over time")
     """)
 
   #App Header
