@@ -6,6 +6,13 @@ st.set_page_config(page_title="Win Analysis", page_icon=":arrows_clockwise:")
 # Streamlit app
 def main():
 
+  # Sidebar with expandable User Guide section
+  with st.sidebar.title("📘 User Guide / Instructions"):
+    st.sidebar.write("""
+    **Overview:**
+       This webpage will help your campaign calculate your win number and vote goals/targets. The page itself is smart and uses historical data curated by Strategy Ace to save you time and to make sure your team is up-to-date as registrations change over time")
+    """)
+
   #App Header
   st.image("resources/client/Eskamani_Banner.png",width=700)
   st.title("Campaign Win Analysis")
