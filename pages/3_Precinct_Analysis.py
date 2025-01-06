@@ -17,14 +17,13 @@ def main():
     with st.sidebar.title("📘 User Guide / Instructions"):
         st.sidebar.write("""
         Welcome to the Precinct Analysis Tool!
-
         **Tool Overview:**
            The tool was built to help your campaign explore each precinct and determine which to focus canvassing efforts on by strategic considerations important to your campaign.
-
-        **Explorer:**
-           Select a precinct from the dop down list and see a map as well as up-to-date demographic data.
-           
-        **Prioritizer:**
+        """)
+       st.sidebar.subheader("""Explorer"")
+       st.sidebar.write("Select a precinct from the dop down list and see a map as well as up-to-date demographic data.")
+       st.sidebar.subheader("""Prioritizer"")
+       st.sidebar.write("""
            This tool will create you a prioritized list of precincts to help you allocate valuable resources effectively.
            
            **Decision Parameter Weights:**
