@@ -20,7 +20,7 @@ def main():
         **Tool Overview:**
            The tool was built to help your campaign explore each precinct and determine which to focus canvassing efforts on by strategic considerations important to your campaign.
         """)
-       st.sidebar.subheader("""Explorer"")
+       st.sidebar.subheader("Explorer")
        st.sidebar.write("Select a precinct from the dop down list and see a map as well as up-to-date demographic data.")
        st.sidebar.subheader("""Prioritizer"")
        st.sidebar.write("""
