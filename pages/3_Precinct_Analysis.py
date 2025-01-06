@@ -16,22 +16,25 @@ def main():
    # Sidebar with expandable User Guide section
     with st.sidebar.title("📘 User Guide / Instructions"):
         st.sidebar.write("""
-        Welcome to the Campaign Prioritizer Tool!
+        Welcome to the Precinct Analysis Tool!
 
         **Tool Overview:**
-           The tool was built to help your campaign determine which precinct to focus canvassing efforts on by strategic considerations important to your campaign.
+           The tool was built to help your campaign explore each precinct and determine which to focus canvassing efforts on by strategic considerations important to your campaign.
 
-        **File Input:**
-           You will need to input a csv file with the list of precincts and detailed associated data like demographics and previous election turnout.
-
-        **Decision Parameter Weights:**
-           These values are percentages and range from 0 to 1.0 for each parameter. The goal is to distribute the wieght percentages across all the decision parameters in such a way they add up to 1.0. The higher the number given to a parameter, the more it will play into the ranking of precincts. 
-           You should work with your campaign management Data, and Field teams to determine the appropriate canvass strategy and select the weight values to accurately align.
+        **Explorer:**
+           Select a precinct from the dop down list and see a map as well as up-to-date demographic data.
            
-        **Results:**
-        - The results should be a helful aid to the campaign to determine where to allocate resources and time. 
-        - Feel free to experiment and re-run with the different weights to see how much the prioritized list changes. 
-        - Its helpful to revisit at different parts of your campaign as factors and strategy may change.
+        **Prioritizer:**
+           This tool will create you a prioritized list of precincts to help you allocate valuable resources effectively.
+           
+           **Decision Parameter Weights:**
+              These values are percentages and range from 0 to 1.0 for each parameter. The goal is to distribute the wieght percentages across all the decision parameters in such a way they add up to 1.0. The higher the number given to a parameter, the more it will play into the ranking of precincts. 
+              You should work with your campaign management Data, and Field teams to determine the appropriate canvass strategy and select the weight values to accurately align.
+           
+           **Results:**
+           - The results should be a helful aid to the campaign to determine where to allocate resources and time. 
+           - Feel free to experiment and re-run with the different weights to see how much the prioritized list changes. 
+           - Its helpful to revisit at different parts of your campaign as factors and strategy may change.
         """)
         
     # App Header
